@@ -1,5 +1,5 @@
 body {
-	background-color: lightblue;
+	background-color: #143549;
 	font-size: "100%"
 }
 
@@ -10,6 +10,10 @@ p {
 img {
 	padding:10px;
 }
+
+ul {list-style:none;}
+
+.indent-six {margin-left:600px;}
 
 .grow {
 	transition:all .5s ease-in-out;
@@ -23,4 +27,6 @@ img {
 .grow:hover {
 	transform:scale(15.1);
 	position:relative;
+	padding:10px;
+	border-radius:0px;
 }
