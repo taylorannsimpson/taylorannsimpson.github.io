@@ -6,3 +6,21 @@ body {
 p {
 	font-size: 1em; 
 }
+
+img {
+	padding:10px;
+}
+
+.grow {
+	transition:all .5s ease-in-out;
+}
+
+.grow:active {
+	transform:scale(10.1);
+	position:relative;
+}
+
+.grow:hover {
+	transform:scale(15.1);
+	position:relative;
+}
