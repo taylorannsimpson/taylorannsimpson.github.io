@@ -1,19 +1,33 @@
 body {
-	background-color: #143549;
+	background-color: #134659;
 	font-size: "100%"
-}
+}#
 
 p {
-	font-size: 1em; 
+	font-size: 1em;
+}
+
+p.hidden {
+	visibility: hidden;
 }
 
 img {
+	width:50%;
+	height:auto;
 	padding:10px;
+	opacity:.6;
+	z-index: 1;
 }
 
 ul {list-style:none;}
 
-.indent-six {margin-left:600px;}
+ul.top {margin-top: 15%;}
+
+div {float:left;}
+
+div.column {width:6%;}
+
+.column-margin {margin:20px;}
 
 .grow {
 	transition:all .5s ease-in-out;
@@ -26,7 +40,9 @@ ul {list-style:none;}
 
 .grow:hover {
 	transform:scale(15.1);
+	max-height:400px;
 	position:relative;
-	padding:10px;
 	border-radius:0px;
+	opacity:1;
+	z-index:999;
 }
