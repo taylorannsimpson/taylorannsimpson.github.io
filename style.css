@@ -11,23 +11,32 @@ p.hidden {
 	visibility: hidden;
 }
 
+p:hover {
+	display:block;
+}
+
+
 img {
-	width:50%;
+	width:30%;
 	height:auto;
-	padding:10px;
+	padding:20px;
 	opacity:.6;
 	z-index: 1;
 }
 
 ul {list-style:none;}
 
-ul.top {margin-top: 15%;}
+ul div li {display:block;}
+
+ul.top {margin-top: 20%;}
 
 div {float:left;}
 
-div.column {width:6%;}
+div.column {
+	width:6%;
+}
 
-.column-margin {margin:20px;}
+.text {width:20%;}
 
 .grow {
 	transition:all .5s ease-in-out;
@@ -44,5 +53,29 @@ div.column {width:6%;}
 	position:relative;
 	border-radius:0px;
 	opacity:1;
-	z-index:999;
+	z-index:2;
+	display:block;
+}
+
+span.text-content {
+	background-color: #134659;
+	color:white;
+	display:block;
+	padding:15px;
+	left:20%;
+	top:20%;
+	position:absolute;
+	height:auto;
+	width:25%;
+	opacity:0;
+	z-index:3;
+	-webkit-transition: opacity 500ms;
+  	-moz-transition: opacity 500ms;
+ 	-o-transition: opacity 500ms;
+  	transition: opacity 500ms;
+}
+
+ul div li:hover span.text-content {
+	opacity:1;
+	z-index:3;
 }
