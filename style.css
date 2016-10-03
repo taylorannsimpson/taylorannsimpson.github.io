@@ -1,7 +1,12 @@
 body {
 	background-color: #134659;
 	font-size: "100%"
-}#
+}
+
+.container {
+	width:auto;
+	height:auto;
+}
 
 p {
 	font-size: 1em;
@@ -19,38 +24,86 @@ p:hover {
 img {
 	width:30%;
 	height:auto;
-	padding:20px;
-	opacity:.6;
+	padding-top:20px;
+	padding-bottom:20px;
+	opacity: .6;
 	z-index: 1;
+	min-width:30px;
 }
 
-ul {list-style:none;}
+li.ten {
+	padding-top:10px;
+}
 
-ul div li {display:block;}
+li.twenty {
+	padding-top:20px;
+}
 
-ul.top {margin-top: 20%;}
+li.thirty {
+	padding-top:30px;
+}
 
-div {float:left;}
+li.forty {
+	padding-top:40px;
+}
+
+li.fifty {
+	padding-top:50px;
+}
+
+ul {
+	list-style:none;
+}
+
+ul div li {
+	display:block;
+}
+
+ul.top {
+	margin:12%;
+	margin-top:150px;
+}
+
+div {
+	position:relative;
+	display:block;
+	float:left;
+	min-width:30px;
+	height:300px;
+	margin:auto;
+}
 
 div.column {
-	width:6%;
+	display:block;
+	float:top;
+	width:8%;
+	height:350px;
+	min-width:60px;
 }
-
-.text {width:20%;}
 
 .grow {
 	transition:all .5s ease-in-out;
+	z-index:2;
 }
 
 .grow:active {
 	transform:scale(10.1);
+	max-height:400px;
 	position:relative;
+	padding-top:20px;
+	padding-bottom:20px;
+	border-radius:0px;
+	opacity:1;
+	z-index:2;
+	display:block;
 }
 
 .grow:hover {
 	transform:scale(15.1);
 	max-height:400px;
 	position:relative;
+	padding-top:20px;
+	padding-bottom:20px;
 	border-radius:0px;
 	opacity:1;
 	z-index:2;
@@ -67,6 +120,7 @@ span.text-content {
 	position:absolute;
 	height:auto;
 	width:25%;
+	min-width:200px;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
