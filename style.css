@@ -259,7 +259,7 @@ ul div li:hover span.text-right-b {
 		position:relative;
 		display:block;
 		float:left;
-		min-width: 200px;
+		min-width: 400px;
 		height:280px;
 		margin:auto;
 	}
@@ -269,6 +269,6 @@ ul div li:hover span.text-right-b {
 		float:top;
 		width:8%;
 		height:350px;
-		min-width:200px;
+		min-width:400px;
 	}
  }
