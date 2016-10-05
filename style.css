@@ -1,4 +1,6 @@
 body {
+	overflow-y:scroll;
+	height:auto;
 	background-color: #134659;
 	font-size: "100%"
 }
@@ -60,7 +62,7 @@ ul div li {
 }
 
 ul.top {
-	margin:12%;
+	margin:15%;
 	margin-top:150px;
 }
 
@@ -104,23 +106,43 @@ div.column {
 	position:relative;
 	padding-top:20px;
 	padding-bottom:20px;
-	border-radius:0px;
+	margin-top:90px;
+	margin-bottom:10px;
 	opacity:1;
 	z-index:2;
 	display:block;
 }
 
-span.text-content {
+.grow-b {
+	transition:all .5s ease-in-out;
+	z-index:2;
+}
+
+.grow-b:hover {
+	transform:scale(15.1);
+	max-height:400px;
+	position:relative;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-top:-90px;
+	opacity:1;
+	z-index:2;
+	display:block;
+}
+
+/*displays text in upper left corner*/
+span.text-left-t {
 	background-color: #134659;
 	color:white;
 	display:block;
-	padding:15px;
-	left:20%;
-	top:20%;
-	position:absolute;
+	padding:25px;
+	left:0px;
+	top:0px;
+	position:fixed;
+	float:left;
 	height:auto;
-	width:25%;
-	min-width:200px;
+	width:auto;
+	max-width:300px;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -129,7 +151,83 @@ span.text-content {
   	transition: opacity 500ms;
 }
 
-ul div li:hover span.text-content {
+/*displays text in lower left corner*/
+span.text-left-b {
+	background-color: #134659;
+	color:white;
+	display:block;
+	padding:25px;
+	left:0px;
+	bottom:0px;	
+	position:fixed;
+	height:auto;
+	width:auto;
+	max-width:300px;
+	opacity:0;
+	z-index:3;
+	-webkit-transition: opacity 500ms;
+  	-moz-transition: opacity 500ms;
+ 	-o-transition: opacity 500ms;
+  	transition: opacity 500ms;
+}
+
+/*displays text in upper right corner*/
+span.text-right-t {
+	background-color: #134659;
+	color:white;
+	display:block;
+	padding:25px;
+	right:0px;
+	top:0px;
+	position:fixed;
+	float:left;
+	height:auto;
+	width:auto;
+	max-width:300px;
+	opacity:0;
+	z-index:3;
+	-webkit-transition: opacity 500ms;
+  	-moz-transition: opacity 500ms;
+ 	-o-transition: opacity 500ms;
+  	transition: opacity 500ms;
+}
+
+/*displays text in lower right corner*/
+span.text-right-b{
+	background-color: #134659;
+	color:white;
+	display:block;
+	padding:25px;
+	right:0px;
+	bottom:0px;	
+	position:fixed;
+	height:auto;
+	width:auto;
+	max-width:300px;
+	opacity:0;
+	z-index:3;
+	-webkit-transition: opacity 500ms;
+  	-moz-transition: opacity 500ms;
+ 	-o-transition: opacity 500ms;
+  	transition: opacity 500ms;
+}
+
+ul div li:hover span.text-left-t {
+	opacity:1;
+	z-index:3;
+}
+
+ul div li:hover span.text-left-b{
+	opacity:1;
+	z-index:3;
+}
+
+ul div li:hover span.text-right-t {
+	opacity:1;
+	z-index:3;
+}
+
+ul div li:hover span.text-right-b {
 	opacity:1;
 	z-index:3;
 }
