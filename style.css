@@ -255,6 +255,16 @@ ul div li:hover span.text-right-b {
 		margin: 0px;
 	}
 
+	img {
+		width:60%;
+		height:auto;
+		padding-top:20px;
+		padding-bottom:20px;
+		opacity: .6;
+		z-index: 1;
+		min-width:100px;
+	}
+
 	div {
 		position:relative;
 		display:block;
