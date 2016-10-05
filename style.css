@@ -71,7 +71,7 @@ div {
 	display:block;
 	float:left;
 	min-width:30px;
-	height:300px;
+	height:280px;
 	margin:auto;
 }
 
@@ -129,9 +129,26 @@ div.column {
 	display:block;
 }
 
+.grow-m {
+	transition:all .5s ease-in-out;
+	z-index:2;
+}
+
+.grow-m:hover {
+	transform:scale(15.1);
+	max-height:400px;
+	position:relative;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-top:0px;
+	opacity:1;
+	z-index:2;
+	display:block;
+}
+
 /*displays text in upper left corner*/
 span.text-left-t {
-	background-color: #134659;
+	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -152,7 +169,7 @@ span.text-left-t {
 
 /*displays text in lower left corner*/
 span.text-left-b {
-	background-color: #134659;
+	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -172,7 +189,7 @@ span.text-left-b {
 
 /*displays text in upper right corner*/
 span.text-right-t {
-	background-color: #134659;
+	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -193,7 +210,7 @@ span.text-right-t {
 
 /*displays text in lower right corner*/
 span.text-right-b {
-	background-color: #134659;
+	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -230,3 +247,28 @@ ul div li:hover span.text-right-b {
 	opacity:1;
 	z-index:3;
 }
+
+@media only screen and (min-device-width: 480px) {
+    p {
+		font-size: 3em;
+		padding:0px;
+		margin: 0px;
+	}
+
+	div {
+		position:relative;
+		display:block;
+		float:left;
+		min-width: 200px;
+		height:280px;
+		margin:auto;
+	}
+
+	div.column {
+		display:block;
+		float:top;
+		width:8%;
+		height:350px;
+		min-width:200px;
+	}
+ }
