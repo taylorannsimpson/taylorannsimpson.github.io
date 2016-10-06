@@ -4,6 +4,11 @@
   src: url(fonts/MiloSerifPro.otf);
 }
 
+@font-face {
+  font-family: Rubik;
+  src: url(fonts/Rubik-Regular.otf);
+}
+
 body {
 	font-family: Milo, serif;
 	overflow-y:scroll; /*sets the page to scroll when images are too large*/
@@ -23,6 +28,63 @@ p {
 	font-size: 1.5em;
 	padding:0px;
 	margin: 0px;
+}
+
+h1 {
+	font-family: Rubik, sans-serif;
+	font-size: 12vw;
+	width:auto;
+	height:auto;
+	color:white;
+}
+
+/*creates a centered white square*/
+#square {
+	width: 20px;
+	height: 20px;
+	background: white;
+	padding: 0px;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:40px;
+	margin-bottom:0px;
+	float:top;
+	display:block;
+	opacity: .4;
+}
+
+/*changes opacity on hover*/
+#square:hover {
+	opacity: 1;
+}
+
+/*displays large header text*/
+span.large-text {
+	color:white;
+	display:block;
+	padding:0px;
+	position:fixed;
+	float:left;
+	left:5%;
+	margin-right:100px;
+	margin-top:auto;
+	height:auto;
+	width:auto;
+	visibility: hidden;
+	opacity:0;
+	z-index:4;
+	-webkit-transition: opacity 500ms;
+  	-moz-transition: opacity 500ms;
+ 	-o-transition: opacity 500ms;
+  	transition: opacity 500ms;
+}
+
+/*changes visibility and opacity on displayed text*/
+div#square:hover span.large-text {
+	visibility:visible;
+	opacity:1;
+	z-index:4;
+	float:left;
 }
 
 /*sets minimum image width*/
@@ -72,7 +134,7 @@ ul.top {
 	margin-top:150px; /*sets minimum top margin*/
 }
 
-div {
+ul div li {
 	position:relative;
 	display:block;
 	float:left; /*makes divs responsive to page size*/
@@ -229,6 +291,7 @@ span.text-left-t {
 	float:left;
 	height:auto;
 	width:auto;
+	visibility:hidden;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -247,6 +310,7 @@ span.text-left-b {
 	position:fixed;
 	height:auto;
 	width:auto;
+	visibility:hidden;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -266,6 +330,7 @@ span.text-right-t {
 	float:left;
 	height:auto;
 	width:auto;
+	visibility:hidden;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -284,6 +349,7 @@ span.text-right-b {
 	position:fixed;
 	height:auto;
 	width:auto;
+	visibility:hidden;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -295,21 +361,25 @@ span.text-right-b {
 /*changes opacity for displayed text*/
 ul div li:hover span.text-left-t {
 	opacity:1;
+	visibility:visible;
 	z-index:3;
 }
 
 ul div li:hover span.text-left-b{
 	opacity:1;
+	visibility:visible;
 	z-index:3;
 }
 
 ul div li:hover span.text-right-t {
 	opacity:1;
+	visibility:visible;
 	z-index:3;
 }
 
 ul div li:hover span.text-right-b {
 	opacity:1;
+	visibility:visible;
 	z-index:3;
 }
 
@@ -355,6 +425,18 @@ ul div li:hover span.text-right-b {
 	ul.top {
 		margin:16.5%;
 		margin-top:300px;
+	}
+
+	#square {
+		width: 80px;
+		height: 80px;
+	}
+
+	div#square:active span.large-text {
+		visibility:visible;
+		opacity:1;
+		z-index:4;
+		float:left;
 	}
 
 	.grow {
