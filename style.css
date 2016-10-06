@@ -158,7 +158,6 @@ span.text-left-t {
 	float:left;
 	height:auto;
 	width:auto;
-	max-width:300px;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -178,7 +177,6 @@ span.text-left-b {
 	position:fixed;
 	height:auto;
 	width:auto;
-	max-width:300px;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -199,7 +197,6 @@ span.text-right-t {
 	float:left;
 	height:auto;
 	width:auto;
-	max-width:300px;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -219,7 +216,6 @@ span.text-right-b {
 	position:fixed;
 	height:auto;
 	width:auto;
-	max-width:300px;
 	opacity:0;
 	z-index:3;
 	-webkit-transition: opacity 500ms;
@@ -283,7 +279,7 @@ ul div li:hover span.text-right-b {
 	}
 
 	ul.top {
-		margin:17%;
+		margin:16%;
 		margin-top:300px;
 	}
 
@@ -298,4 +294,4 @@ ul div li:hover span.text-right-b {
 		z-index:2;
 		display:block;
 	}
- }
+}
