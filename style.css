@@ -278,17 +278,17 @@ ul div li:hover span.text-right-b {
 		display:block;
 		float:left;
 		width:8%;
-		height:600px;
+		height:700px;
 		min-width: 200px;
 	}
 
 	ul.top {
-		margin:16%;
+		margin:17%;
 		margin-top:300px;
 	}
 
 	.grow:active {
-		transform:scale(1.2.1);
+		transform:scale(2.1);
 		max-height:400px;
 		position:relative;
 		padding-top:20px;
