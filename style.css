@@ -33,6 +33,7 @@ p {
 h1 {
 	font-family: Rubik, sans-serif;
 	font-size: 12vw;
+	font-size:10em;
 	width:auto;
 	height:auto;
 	color:white;
@@ -61,7 +62,7 @@ h1 {
 /*displays large header text*/
 span.large-text {
 	color:white;
-	display:block;
+	display:none;
 	padding:0px;
 	position:fixed;
 	float:left;
@@ -70,7 +71,6 @@ span.large-text {
 	margin-top:auto;
 	height:auto;
 	width:auto;
-	visibility: hidden;
 	opacity:0;
 	z-index:4;
 	-webkit-transition: opacity 500ms;
@@ -81,7 +81,7 @@ span.large-text {
 
 /*changes visibility and opacity on displayed text*/
 div#square:hover span.large-text {
-	visibility:visible;
+	display:block;
 	opacity:1;
 	z-index:4;
 	float:left;
