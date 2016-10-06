@@ -1,3 +1,4 @@
+/*links font to CSS*/
 @font-face {
   font-family: Milo;
   src: url(fonts/MiloSerifPro.otf);
@@ -5,24 +6,26 @@
 
 body {
 	font-family: Milo, serif;
-	overflow-y:scroll;
+	overflow-y:scroll; /*sets the page to scroll when images are too large*/
 	height:auto;
 	background-color: #134659;
 	font-size: "100%"
 }
 
-.container {
+/*makes page size flexible*/
+body.container {
 	width:auto;
 	height:auto;
 }
 
+/*sets font size*/
 p {
 	font-size: 1.5em;
 	padding:0px;
 	margin: 0px;
 }
 
-
+/*sets minimum image width*/
 img {
 	width:30%;
 	height:auto;
@@ -33,6 +36,7 @@ img {
 	min-width:30px;
 }
 
+/*creates more vertical space between images*/
 li.ten {
 	padding-top:10px;
 }
@@ -53,6 +57,7 @@ li.fifty {
 	padding-top:50px;
 }
 
+/*removes bullets/decoration from lists*/
 ul {
 	list-style:none;
 }
@@ -61,20 +66,20 @@ ul div li {
 	display:block;
 }
 
+/*sets margins around block of divs*/
 ul.top {
 	margin:15%;
-	margin-top:150px;
+	margin-top:150px; /*sets minimum top margin*/
 }
 
 div {
 	position:relative;
 	display:block;
-	float:left;
-	min-width:30px;
-	height:280px;
+	float:left; /*makes divs responsive to page size*/
 	margin:auto;
 }
 
+/*sets minimum with of divs with images*/
 div.column {
 	display:block;
 	float:left;
@@ -83,11 +88,16 @@ div.column {
 	min-width:60px;
 }
 
+/*smooth image transition*/
 .grow {
-	transition:all .5s ease-in-out;
 	z-index:2;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
+/*transforms image scale when clicked on if hover is not supported*/
 .grow:active {
 	transform:scale(15.1);
 	max-height:400px;
@@ -98,8 +108,13 @@ div.column {
 	opacity:1;
 	z-index:2;
 	display:block;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
+/*transform image scale on hover - top images*/
 .grow:hover {
 	transform:scale(15.1);
 	max-height:400px;
@@ -111,29 +126,39 @@ div.column {
 	opacity:1;
 	z-index:2;
 	display:block;
-}
-.grow-b {
-	transition:all .5s ease-in-out;
-	z-index:2;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
-.grow-b:hover {
+/*smooth image transition*/
+.grow-m {
+	z-index:2;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/*transforms image scale when clicked on if hover is not supported*/
+.grow-m:active {
 	transform:scale(15.1);
 	max-height:400px;
 	position:relative;
 	padding-top:20px;
 	padding-bottom:20px;
-	margin-top:-100px;
+	border-radius:0px;
 	opacity:1;
 	z-index:2;
 	display:block;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
-.grow-m {
-	transition:all .5s ease-in-out;
-	z-index:2;
-}
-
+/*transform image scale on hover - middle images*/
 .grow-m:hover {
 	transform:scale(15.1);
 	max-height:400px;
@@ -144,11 +169,57 @@ div.column {
 	opacity:1;
 	z-index:2;
 	display:block;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/*smooth image transition*/
+.grow-b {
+	z-index:2;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/*transforms image scale when clicked on if hover is not supported*/
+.grow-b:active {
+	transform:scale(15.1);
+	max-height:400px;
+	position:relative;
+	padding-top:20px;
+	padding-bottom:20px;
+	border-radius:0px;
+	opacity:1;
+	z-index:2;
+	display:block;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/*transform image scale on hover - bottom images*/
+.grow-b:hover {
+	transform:scale(15.1);
+	max-height:400px;
+	position:relative;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-top:-100px;
+	opacity:1;
+	z-index:2;
+	display:block;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
 /*displays text in upper left corner*/
 span.text-left-t {
-	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -168,7 +239,6 @@ span.text-left-t {
 
 /*displays text in lower left corner*/
 span.text-left-b {
-	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -187,7 +257,6 @@ span.text-left-b {
 
 /*displays text in upper right corner*/
 span.text-right-t {
-	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -207,7 +276,6 @@ span.text-right-t {
 
 /*displays text in lower right corner*/
 span.text-right-b {
-	/*background-color: #134659;*/
 	color:white;
 	display:block;
 	padding:25px;
@@ -224,6 +292,7 @@ span.text-right-b {
   	transition: opacity 500ms;
 }
 
+/*changes opacity for displayed text*/
 ul div li:hover span.text-left-t {
 	opacity:1;
 	z-index:3;
@@ -244,6 +313,7 @@ ul div li:hover span.text-right-b {
 	z-index:3;
 }
 
+/*CSS for mobile screens only - larger text, images, and smaller scale change*/
 @media only screen and (max-device-width: 480px) {
 	body {
 		overflow:scroll;
@@ -287,33 +357,81 @@ ul div li:hover span.text-right-b {
 		margin-top:300px;
 	}
 
+	.grow {
+		z-index:2;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
+
 	.grow:active {
 		transform:scale(6.1);
 		max-width:200px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 	}
 
 	.grow:hover {
 		transform:scale(6.1);
 		max-width:200px;
-	}
-
-	.grow-b {
-		transition:all .5s ease-in-out;
-		z-index:2;
-	}
-
-	.grow-b:hover {
-		transform:scale(6.1);
-		max-width:200px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 	}
 
 	.grow-m {
-		transition:all .5s ease-in-out;
 		z-index:2;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
+
+	.grow-m:active {
+		transform:scale(6.1);
+		max-width:200px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 	}
 
 	.grow-m:hover {
 		transform:scale(6.1);
 		max-width:200px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
+
+	.grow-b {
+		z-index:2;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
+
+	.grow-b:active {
+		transform:scale(6.1);
+		max-width:200px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
+
+	.grow-b:hover {
+		transform:scale(6.1);
+		max-width:200px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 	}
 }
