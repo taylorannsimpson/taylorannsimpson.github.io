@@ -284,7 +284,7 @@ ul div li:hover span.text-right-b {
 	}
 
 	.grow:active {
-		transform:scale(2.1);
+		transform:scale(1.2);
 		max-width:200px;
 		position:relative;
 		padding-top:20px;
