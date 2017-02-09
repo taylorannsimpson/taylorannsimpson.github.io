@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,500");
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700,700i");
+body {
+  background-color: #231f20;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  overflow-y: hidden; }
+
+.nav-bar {
+  display: block;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: auto;
+  height: auto;
+  background-color: #f1f1f2;
+  padding: 15px; }
+
+.link {
+  color: #231f20;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.0625em;
+  padding-top: 5px;
+  line-height: 17px;
+  border-bottom: 1px solid #231f20;
+  text-decoration: none;
+  width: auto; }
+
+.header {
+  text-decoration: none;
+  color: #231f20;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.0625em;
+  line-height: 27px;
+  width: auto;
+  text-align: center;
+  margin: auto; }
+
+.h-f {
+  width: calc(100% / 3);
+  display: inline-block; }
+
+.h-2 {
+  width: calc(100% / 3);
+  display: inline-block;
+  text-align: center; }
+
+.footer {
+  margin-left: 50px;
+  margin-right: 50px;
+  width: auto;
+  height: auto;
+  background-color: #231f20;
+  padding: 0px; }
+
+.fix {
+  display: block;
+  float: left;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #231f20; }
+
+.container {
+  display: block;
+  float: left;
+  margin-top: 0px;
+  padding: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: auto;
+  height: 100%; }
+
+.column {
+  width: calc(100% / 3);
+  display: inline-block;
+  float: left; }
+
+.c-1 {
+  color: white;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.0625em;
+  padding-left: 15px; }
+
+.c-2 {
+  color: white;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.0625em;
+  text-align: center; }
+
+.c-3 {
+  color: white;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.0625em;
+  padding-right: 15px;
+  text-align: right; }
+
+.practical {
+  background-color: #d0d2d3;
+  height: calc(100vh - 190px);
+  padding: 15px;
+  overflow-y: scroll; }
+
+.practical-beautiful {
+  background-color: #e6e7e8;
+  height: calc(100vh - 190px);
+  padding: 15px;
+  overflow-y: scroll; }
+
+.beautiful {
+  background-color: #f1f1f2;
+  height: calc(100vh - 190px);
+  padding: 15px;
+  overflow-y: scroll; }
+
+.object {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-size: 1.0625em;
+  line-height: 24px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin: 0px;
+  width: 100%;
+  display: block;
+  float: left; }
+
+.meaning {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.0625em;
+  line-height: 27px;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  float: left;
+  width: 100%; }
+  .meaning:hover {
+    color: #00a066; }
+
+.link-2 {
+  color: #231f20;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.0625em;
+  line-height: 17px;
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  float: left;
+  width: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #231f20;
+  text-decoration: none; }
+  .link-2:hover {
+    color: #4c6289;
+    border-bottom: 1px solid #4c6289; }
+
+.italic {
+  font-style: italic; }
+
+.half-column {
+  width: 50%;
+  display: inline-block;
+  float: left; }
+
+.quarter-column {
+  width: 25%;
+  display: inline-block;
+  float: left; }
+
+.description {
+  background-color: #d0d2d3;
+  height: calc(100vh - 190px);
+  padding: 15px;
+  overflow-y: scroll; }
+
+.timeline {
+  background-color: #f1f1f2;
+  height: calc(100vh - 190px);
+  padding: 15px;
+  overflow-y: scroll; }
+
+.paragraph {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 36px;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  float: left; }
+
+.dark {
+  color: white;
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-size: 1.0625em;
+  line-height: 17px;
+  width: auto;
+  margin: 0px;
+  margin-top: 15px;
+  margin-right: 100%;
+  padding: 6px 9px;
+  background-color: #231f20;
+  display: block;
+  float: left; }
+
+.month {
+  margin-bottom: 9px; }
+
+::-webkit-scrollbar {
+  width: 6px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #a6a8ab; }
+
+/*# sourceMappingURL=dictionary.css.map */
