@@ -29,27 +29,7 @@ for(var i = 0; i < json.length; i++) {
     var quote = '<span class="quote">' + json[i].qt + '</span>' + " ";
     var movie = '<span class="ranking">' + json[i].ref + '</span>'; 
     groups[year] = groups[year] || [];
-    // groups[year].push(year);
     groups[year].push(rank + quote + movie);
-
-    // if (year === 1927) {
-    //     $('#block').append(
-    //     $('#year').append('<p>' + year + '</p>') +
-    //     $('#quote').append('<p class="large-text">' + '<span class="no">' + "rank." + '</span>' + groups[1927].pop() + '</p>')
-    //     );
-    // }
-
-    // if (year === 1927) {
-    //     $('#1927').append(
-    //     $('#quote').append('<p>' + '<span class="no">' + "rank." + '</span>'+ groups[1927].pop() + '</p>')
-    //     );
-    // }
-
-    // if (year === 1933) {
-    //     $('#1933').append(
-    //     $('#quote').append('<p>' + '<span class="no">' + "rank." + '</span>'+ groups[1933].pop() + '</p>')
-    //     );
-    // }
 
     if (year === 1927) {
         $('#1927').append('<p class="large-text">' + '<span class="no">' + "rank." + '</span>'+ groups[1927].pop() + '</p>');

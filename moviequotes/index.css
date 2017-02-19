@@ -10,35 +10,33 @@ body {
   display: block;
   float: left;
   color: black;
-  background-color: #d44048;
-  width: 100%;
-  max-width: 100vw;
+  background-color: #fb2634;
+  width: 100vw;
   height: auto;
   padding: 50px;
   padding-left: 100px;
+  padding-right: 100px;
   margin: 0px; }
-
-.libre-header {
-  display: block;
-  float: left;
-  width: auto;
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: 900;
-  font-size: 66px;
-  line-height: 90px;
-  box-shadow: inset 0px -2px 0 0em #000000;
-  margin: 0px;
-  margin-right: 100px; }
-
-.nixie-header {
-  display: block;
-  float: left;
-  width: auto;
-  font-family: "Nixie One";
-  font-size: 66px;
-  line-height: 90px;
-  box-shadow: inset 0px -2px 0 0em #000000;
-  margin: 0px; }
+  .l-header .libre-header {
+    display: inline-block;
+    float: left;
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 900;
+    font-size: 66px;
+    line-height: 90px;
+    width: auto;
+    box-shadow: inset 0px -2px 0 0em black;
+    margin: 0px;
+    margin-right: 100px; }
+  .l-header .nixie-header {
+    display: inline-block;
+    float: left;
+    width: auto;
+    font-family: "Nixie One";
+    font-size: 66px;
+    line-height: 90px;
+    box-shadow: inset 0px -2px 0 0em black;
+    margin: 0px; }
 
 .l-block {
   display: inline-block;
@@ -68,7 +66,7 @@ body {
     margin: 0px; }
 
 .side-year {
-  color: white;
+  color: whitesmoke;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 900;
   font-size: 21px;

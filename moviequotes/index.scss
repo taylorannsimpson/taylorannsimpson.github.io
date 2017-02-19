@@ -3,7 +3,7 @@
 
 $libre: 'Libre Franklin', sans-serif;
 $nixie: 'Nixie One';
-$red: #d44048;
+$red: #fb2634;
 
 body {
 	margin: 0px;
@@ -17,36 +17,36 @@ body {
 	float: left;
 	color: black;
 	background-color: $red;
-	width: 100%;
-	max-width: 100vw;
+	width: 100vw;
 	height: auto;
 	padding: 50px;
 	padding-left: 100px;
+	padding-right: 100px;
 	margin: 0px;
-}
 
-.libre-header {
-	display: block;
-	float: left;
-	width: auto;
-	font-family: $libre;
-	font-weight: 900;
-	font-size: 66px;
-	line-height: 90px;
-	box-shadow: inset 0px -2px 0 0em #000000;
-	margin: 0px;
-	margin-right: 100px;
-}
+	.libre-header {
+		display: inline-block;
+		float: left;
+		font-family: $libre;
+		font-weight: 900;
+		font-size: 66px;
+		line-height: 90px;
+		width: auto;
+		box-shadow: inset 0px -2px 0 0em black;
+		margin: 0px;
+		margin-right: 100px;
+	}
 
-.nixie-header {
-	display: block;
-	float: left;
-	width: auto;
-	font-family: $nixie;
-	font-size: 66px;
-	line-height: 90px;
-	box-shadow: inset 0px -2px 0 0em #000000;
-	margin: 0px;
+	.nixie-header {
+		display: inline-block;
+		float: left;
+		width: auto;
+		font-family: $nixie;
+		font-size: 66px;
+		line-height: 90px;
+		box-shadow: inset 0px -2px 0 0em black;
+		margin: 0px;
+	}
 }
 
 .l-block {
@@ -82,7 +82,7 @@ body {
 }
 
 .side-year {
-	color: white;
+	color: whitesmoke;
 	font-family: $libre;
 	font-weight: 900;
 	font-size: 21px;
