@@ -8,7 +8,7 @@ $red: #fb2634;
 body {
 	margin: 0px;
 	padding: 0px;
-	width: 100%;
+	width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -26,7 +26,6 @@ body {
 
 	.libre-header {
 		display: inline-block;
-		float: left;
 		font-family: $libre;
 		font-weight: 900;
 		font-size: 66px;
@@ -39,7 +38,6 @@ body {
 
 	.nixie-header {
 		display: inline-block;
-		float: left;
 		width: auto;
 		font-family: $nixie;
 		font-size: 66px;
