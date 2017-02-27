@@ -1,0 +1,276 @@
+@font-face {
+	font-family: AvantBold;
+	src: url(fonts/ITCAvantGardeStd-Bold.otf);
+}
+
+@font-face {
+	font-family: AvantMed;
+	src: url(fonts/ITCAvantGardeStd-Md.otf);
+}
+
+@font-face {
+	font-family: AvantItalic;
+	src: url(fonts/ITCAvantGardeStd-BkObl.otf);
+}
+
+@font-face {
+	font-family: Antonio;
+	src: url(fonts/Antonio-Bold.ttf);
+}
+
+@font-face {
+	font-family: BauReg;
+	src: url(fonts/BauTF-Regular.otf);
+}
+
+@font-face {
+	font-family: BauBold;
+	src: url(fonts/Bau-Medium.otf);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+/*left side with image*/
+
+.a-1 {
+	display: block;
+	float: left;
+	position: relative;
+	width: 25%;
+	z-index: 0;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+	transition: 2s;
+}
+
+.a-imgleft {
+	display: block;
+	float: left;
+	width: 50%;
+	min-width: 80px;
+	margin-top: 400px;
+	margin-left: 35%;
+	padding-bottom: 15px;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+	transition: 2s;
+}
+
+.enlarge-text {
+	display: block;
+	float: right;
+	font-family: AvantMed;
+	font-size: 0.65em;
+	letter-spacing: 1px;
+	line-height: 150%;
+	color: #263f44;
+	margin-top: 10px;
+	margin-right: 15px;
+	margin-bottom: 0;
+}
+
+.caption {
+	display: block;
+	float: left;
+	width: 50%;
+	min-width: 80px;
+	font-family: AvantMed;
+	font-size: 0.65em;
+	letter-spacing: 1px;
+	line-height: 150%;
+	color: #263f44;
+	margin-top: 0px;
+	margin-left: 35%;
+	margin-bottom: 0;
+}
+
+.credit {
+	display: block;
+	float: left;
+	width: 50%;
+	min-width: 80px;
+	font-family: AvantItalic;
+	font-size: 0.65em;
+	letter-spacing: 1px;
+	line-height: 150%;
+	color: #263f44;
+	margin-top: 0px;
+	padding-top: 5px;
+	margin-left: 35%;
+}
+
+/*main article*/
+
+.a-2 {
+	display: block;
+	float: left;
+	position: relative;
+	z-index: 0;
+	width: 50%;
+	margin-right: 25%;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+	transition: 2s;
+}
+
+.a-h1 {
+	font-family: Antonio;
+	padding-top: 160px;
+	font-size: 0.875em;
+	letter-spacing: 1.5px;
+	color: #b5b7b9;
+	margin-bottom: 15px;
+}
+
+.a-h2 {
+	font-family: AvantBold;
+	font-size: 1.3125em;
+	letter-spacing: 1px;
+	line-height: 150%;
+	color: #816347;
+	margin-bottom: 10px;
+}
+
+.a-h3 {
+	font-family: AvantMed;
+	font-size: 0.6875em;
+	letter-spacing: 1px;
+	color: #263f44;
+	padding: 0px;
+	margin-bottom:40px;
+}
+
+.a-text {
+	font-family: BauReg;
+	font-size: 1.0625em;
+	line-height: 170%;
+	color: #263f44;
+}
+
+.a-quote {
+	font-family: BauBold;
+	font-size: 1.0625em;
+	line-height: 170%;
+	color: #7d9caf;
+}
+
+.a-highlight {
+	display: inline;
+	background-color: #eaebeb;
+	box-shadow: 5px 0 0 #eaebeb, -5px 0 0 #eaebeb;
+}
+
+/*toggled image enlarge*/
+
+#toggle-img {
+	z-index: 7;
+}
+
+.splash-img {
+	display: block;
+	position: absolute;
+	width: 22%;
+	top: 60px;
+	right: 0px;
+	z-index: 7;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+.enlarge-img {
+	display: block;
+	position: relative;
+	float: right;
+	width: 100%;
+	top: 0px;
+	z-index: 7;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+#small-img {
+	width: 100%;
+	float: right;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 1000px) {
+	.a {
+		width: 100%;
+		margin-left: 200px;
+		margin-right: 0px;
+	}
+
+	.a-imgleft { 
+		width: 60%;
+		margin-left: 5%;
+	}
+
+	.caption {
+		width: 60%;
+		margin-left: 5%;
+	}
+
+	.credit {
+		width: 60%;
+		margin-left: 5%;
+	}
+
+	.splash-img {
+		width: 100px;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	.splash-img {
+		top: 95px;
+	}
+
+	.enlarge-img { 
+		top: 80px;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.a-h1 {
+		padding-top: 325px;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.splash-img {
+		top: 125px;
+	}
+
+	.enlarge-img { 
+		top: 110px;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.splash-img {
+		top: 155px;
+	}
+
+	.enlarge-img { 
+		top: 140px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.splash-img {
+		top: 185px;
+	}
+
+	.enlarge-img { 
+		top: 170px;
+	}
+}

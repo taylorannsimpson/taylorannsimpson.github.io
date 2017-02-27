@@ -1,0 +1,185 @@
+@font-face {
+	font-family: AvantBold;
+	src: url(fonts/ITCAvantGardeStd-Bold.otf);
+}
+
+body {
+	margin: 0px;
+	background-color: white;
+	overflow-x: hidden;
+}
+
+img {
+	display:block;
+	float:left;
+}
+
+/*logo with navigation*/
+
+.logo {
+	background-color: white;
+	padding:15px;
+	margin-top:0px;
+	display: block;
+	margin-left: 80px;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+    transition: 2s;
+}
+
+img.logo-image {
+	position: fixed;
+	width: 123px;
+	z-index: 10;
+	padding-bottom: 10px;
+}
+
+/*makes logo stick on scroll*/
+
+#typelogo {
+	background-color: white;
+	padding:15px;
+	/*margin-top:0px;*/
+	display: block;
+	margin-left: 80px;
+	position: absolute;
+	width: 123px;
+	z-index: 8;
+	margin-top:115px;
+	border-bottom: 3px solid #263f44;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+    transition: 2s;
+}
+
+#typelogo.stick {
+	margin-top: -40px;
+	position: fixed;
+	top: 0;
+	z-index: 8;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+    transition: 2s;
+}
+
+#typelogo.clear {
+	opacity: 0;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+    transition: 2s;
+}
+
+#typelogo:hover {
+	border-bottom: 3px solid #c7ba7a;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+    transition: 0s;
+}
+
+/*icons*/
+
+img.icon-large {
+	height: 25px;
+	position: relative;
+}
+
+/*navigation and links*/
+
+nav {
+	position: fixed;
+	float: right;
+	padding-right: 20px;
+	margin: auto;
+	width: 100%;
+	height: 60px;
+	z-index: 9;
+	background-color: white;
+	border-bottom: 3px solid #263f44;
+}
+
+ul {
+	float: right;
+	padding: auto;
+	vertical-align: 50%;
+}
+
+li {
+	position: relative;
+	width: auto;
+	list-style-type: none;
+	display: inline-block;
+	margin-top: 8px;
+	vertical-align: 50%;
+}
+
+.nav-icon {
+	height: 25px;
+	padding-right: 15px;
+	display: inline-block;
+	position: relative;
+	margin-top: -8px;
+}
+
+li a {
+	color: #263f44;
+	text-decoration: none;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-family: AvantBold;
+	font-size: 0.6875em;
+	letter-spacing: .8px;
+	display: inline-block;
+	vertical-align: 50%; 
+}
+
+li a:hover {
+	z-index: 20;
+	padding-bottom: 19px;
+	width: auto;
+	border-bottom: 3px solid #c7ba7a;
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 1000px) {
+	.logo {
+		margin-left: 0px;
+		-webkit-transition: 2s;
+		-moz-transition: 2s;
+	    transition: 2s;
+	}
+
+	#typelogo {
+		margin-left: 0px;
+	}
+
+	nav {
+		height: auto;
+		z-index: 8;
+	}
+
+	ul {
+		float: left;
+		margin-left: 150px;
+	}
+
+	li a {
+		display: block;
+	}
+
+	li a:hover {
+		color: #c7ba7a;
+		padding-bottom: 8px;
+		border-bottom: none;
+	}
+}
+
+/*@media only screen and (max-width: 500px) {
+	.logo {
+		margin-top: 50px;
+	}
+
+	#typelogo {
+		margin-top: 165px;
+	}
+}*/

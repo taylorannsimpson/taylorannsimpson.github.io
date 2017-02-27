@@ -1,0 +1,155 @@
+@font-face {
+	font-family: AvantBold;
+	src: url(fonts/ITCAvantGardeStd-Bold.otf);
+}
+
+@font-face {
+	font-family: AvantMed;
+	src: url(fonts/ITCAvantGardeStd-Md.otf);
+}
+
+@font-face {
+	font-family: AvantMedItalic;
+	src: url(fonts/ITCAvantGardeStd-MdObl.otf);
+}
+
+@font-face {
+	font-family: AntonioLight;
+	src: url(fonts/Antonio-Light.ttf);
+}
+
+@font-face {
+	font-family: BauReg;
+	src: url(fonts/BauTF-Regular.otf);
+}
+
+@font-face {
+	font-family: BauBold;
+	src: url(fonts/Bau-Medium.otf);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+/*news layout*/
+
+.news {
+	display: block;
+	float: left;
+	background-color: #eaebeb;
+	width: 100%;
+	height: auto;
+	margin-top: 80px;
+	padding-bottom: 60px;
+}
+
+.l-news {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	display: inline-block;
+	float: left;
+}
+
+/*headline*/
+
+.n-h1 {
+	font-family: AntonioLight;
+	font-size: 2.375em;
+	letter-spacing: 1px;
+	line-height: 47px;
+	color: #263f44;
+	width: 100%;
+	padding-bottom: 15px;
+	border-bottom: 3px solid #263f44;
+	margin:0px;
+}
+
+/*left half news*/
+
+.l-section1 {
+	margin-top: 40px;
+	width: 45%;
+	padding-right: 4%;
+	border-right: 1px solid #263f44;
+	float: left;
+	display: inline-block;
+}
+
+/*right half announcements*/
+
+.l-section2 {
+	margin-top: 40px;
+	width: 45%;
+	padding-left: 4%;
+	display: inline-block;
+	float: left;
+}
+
+/*news blocks and links*/
+
+.title {
+	font-family: AvantBold;
+	font-size: 1em;
+	line-height: 25px;
+	letter-spacing: 1px;
+	color: #816347;
+	text-decoration: none;
+	margin: 0px;
+	padding-bottom: 10px;
+}
+
+.title:hover {
+	color: #c7ba7a;
+}
+
+.description {
+	font-family: BauReg;
+	font-size: 1.0625em;
+	line-height: 26px;
+	color: #263f44;
+	margin: 0px;
+	padding-bottom: 20px;
+}
+
+.date {
+	font-family: AvantMed;
+	font-size: .6875em;
+	letter-spacing: 1px;
+	line-height: 11px;
+	color: #263f44;
+	margin: 0px;
+	padding-bottom: 10px;
+}
+
+.source {
+	font-family: AvantMedItalic;
+	font-size: .6875em;
+	letter-spacing: 1px;
+	line-height: 11px;
+	color: #263f44;
+	margin: 0px;
+	padding-bottom: 40px;
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 900px) {
+	.l-section1 {
+	margin-top: 40px;
+	width: 100%;
+	padding-right: 0px;
+	border-right: none;
+	display: block;
+	}
+
+	.l-section2 {
+	margin-top: 0px;
+	width: 100%;
+	padding-left: 0px;
+	border-right: none;
+	display: block;
+	}
+}

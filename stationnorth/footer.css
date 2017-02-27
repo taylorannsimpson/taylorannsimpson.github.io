@@ -1,0 +1,256 @@
+@font-face {
+	font-family: AvantBold;
+	src: url(fonts/ITCAvantGardeStd-Bold.otf);
+}
+
+@font-face {
+	font-family: AvantMed;
+	src: url(fonts/ITCAvantGardeStd-Md.otf);
+}
+
+@font-face {
+	font-family: BauReg;
+	src: url(fonts/BauTF-Regular.otf);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+/*footer layout*/
+
+.footer {
+	display: block;
+	float: left;
+	background-color: #263f44;
+	width: 100%;
+	height: auto;
+	z-index: 999;
+}
+
+.l-footer {
+	margin-left: 100px;
+	margin-right: 100px;
+	z-index: 999;
+}
+
+/*links to other parts of site*/
+
+.f-1 {
+	width: 20%;
+	min-width: 200px;
+	margin-right: 5%;
+	margin-top: 40px;
+	display: block;
+	float: left;
+}
+
+.f-h1 {
+	color: white;
+	font-family: AvantBold;
+	font-size: 0.6875em;
+	letter-spacing: 1px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid white;
+	margin: 0px;
+}
+
+/*form*/
+
+.f-2 {
+	width: 35%;
+	margin-right: 5%;
+	margin-top: 40px;
+	display: block;
+	float: left;
+}
+
+.f-h2 {
+	color: white;
+	font-family: AvantBold;
+	font-size: 0.6875em;
+	letter-spacing: 1px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid white;
+	margin: 0px;
+}
+
+form {
+	margin-top: 30px;
+}
+
+input[type=text], select {
+	width: 65%;
+	height: 23px;
+	background-color: #00202e;
+	border: 1px solid white;
+	border-top: 0px;
+	margin-bottom: 20px;
+	display: block;
+	float: right;
+	padding-left: 5px;
+	color: white;
+	font-family: BauReg;
+	font-size: 0.875em;
+} 
+
+input[type=text]:focus {
+	border: 1px solid white;
+	outline: none;
+}
+
+ul.f-form {
+	/*width: 25%;*/
+	min-width: 100px;
+	list-style-type: none;
+	margin-top: 25px;
+	margin-left: 0px;
+	padding-left: 0px;
+	display: block;
+	float:left;
+}
+
+li.f-input {
+	color: white;
+	font-family: BauReg;
+	font-size: 0.875em;
+	padding-bottom: 20px;
+	display: block;
+	padding-right: 25%;
+}
+
+/*contact information*/
+
+.f-3 {
+	width: 25%;
+	min-width: 200px;
+	margin-top: 40px;
+	display: block;
+	float: left;
+	margin-right: 0;
+}
+
+.f-h3 {
+	color: white;
+	font-family: AvantBold;
+	font-size: 0.6875em;
+	letter-spacing: 1px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid white;
+	margin: 0px;
+}
+
+ul.f-info {
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-top: 30px;
+}
+
+li.f-link {
+	font-family: AvantMed;
+	color: white;
+	font-size: 0.6875em;
+	letter-spacing: 1px;
+	width: 100%;
+	list-style-type: none;
+	padding-bottom: 10px;
+	display: block;
+	float:left;
+}
+
+.f-p {
+	color: white;
+	font-family: BauReg;
+	font-size: 0.875em;
+	line-height: 22px;
+	margin-top: 25px;
+	margin-bottom: 40px;
+}
+
+/*social media icons*/
+
+.f-4 {
+	width: 60px;
+	margin-top: 40px;
+	margin-right: auto;
+	display: block;
+	float: right;
+	padding: 0;
+	z-index: 0;
+}
+
+img.icon-large {
+	height: 25px;
+	position: relative;
+}
+
+img.icon-large-r {
+	height: 30px;
+	position: relative;
+	float: right;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+img.f-social {
+	height: 25px;
+	position: relative;
+	padding-left: 10px;
+	padding-bottom: 40px;
+}
+
+/*media queries*/
+
+@media only screen and (min-width: 1300px) {
+	input[type=text], select {
+	width: 70%;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.f-2 {
+	width: 30%;
+	}
+
+	input[type=text], select {
+	width: 55%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	input[type=text], select {
+	width: 75%;
+	}
+
+	.f-1 {
+	width: 100%;
+	margin-right: 100px;
+	}
+
+	.f-2 {
+	width: 100%;
+	margin-right: 100px;
+	}
+
+	.f-3 {
+	width: 100%;
+	margin-right: 100px;
+	}
+
+	.f-4 {
+		margin-top: 0px;
+		float: left;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	input[type=text], select {
+	width: 60%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	input[type=text], select {
+	width: 50%;
+	}
+}
