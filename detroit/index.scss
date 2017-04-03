@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
+@import url('https://fonts.googleapis.com/css?family=Rubik:900');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+$rubik-mono: 'Rubik Mono One', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$karla: 'Karla', sans-serif;
+
+$black: 900;
+$bold: 700;
+$reg: 400;
+
+$dark-blue: #0D2A52;
+$blue: #1663CF;
+$red: #C70F2E;
+$orange: #F77136;
+$yellow: #F5DC0F;
+$light-gray: #E6E6E6;
+
+$forty-eight: 3em;
+$twenty-one: 1.3125em;
+$eighteen: 1.125em;
+$fifteen: 0.9375em;
+
+body {
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	background-color: $dark-blue;
+	overflow-x: hidden;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+nav {
+	position: fixed;
+	background-color: $light-gray;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: calc(100vw - 16px);
+	z-index: 600;
+}
+
+
+.header {
+	display: inline-block;
+	/*float: left;*/
+	padding: 14px;
+	margin: 0;
+	width: calc(500% / 8 - 32px);
+	border-color: $dark-blue;
+	border-style: solid;
+	border-width: 2px 1px;
+}
+
+.header-sort {
+	display: block;
+	float: right;
+	margin: 0;
+	width: calc(300% / 8);
+	border-color: $dark-blue;
+	border-style: solid;
+	border-width: 2px 1px;
+}
+
+.sort {
+	display: block;
+	float: left;
+	padding: 15px;
+	margin: 0;
+	width: calc(100% / 4.5);
+	height: inherit;
+	border-right: 2px solid $dark-blue;
+	text-align: center;
+
+	&:hover {
+		background-color: white;
+	}
+}
+
+.about {
+	display: block;
+	float: right;
+	padding: 15px;
+	margin: 0;
+	width: 51px;
+	text-align: center;
+
+	&:hover {
+		background-color: white;
+	}
+}
+
+.header-text {
+	display: inline;
+	font-family: $karla;
+	font-size: $eighteen;
+	font-weight: $bold;
+	line-height: 18px;
+	width: auto;
+	text-align: center;
+}
+
+.pop-up {
+	display: block;
+	position: absolute;
+	margin-top: 250px;
+}
+
+.info-pop {
+	display: block;
+	margin-left: calc(100vw / 4 - 5px); 
+	width: calc(50vw - 50px);
+	background-color: white;
+	border: 2px solid $dark-blue;
+	padding: 20px;
+	z-index: 500;
+}
+
+.method {
+	display: block;
+	margin-left: calc(100vw / 4 - 5px); 
+	margin-top: 0px;
+	width: calc(50vw - 50px);
+	background-color: $light-gray;
+	border: 2px solid $dark-blue;
+	border-top: none;
+	padding: 20px;
+	z-index: 500;
+}
+
+.bold-text {
+	color: $dark-blue;
+	font-family: $karla;
+	font-size: $eighteen;
+	font-weight: $bold;
+	line-height: 150%;
+}
+
+.reg-text {
+	color: $dark-blue;
+	font-family: $karla;
+	font-size: $eighteen;
+	font-weight: $reg;
+	line-height: 150%;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+
+	&:hover {
+		color: $blue;
+	}
+}
+
+a {
+	color: $dark-blue;
+}
+
+.center {
+	text-align: center;
+}
+
+.icon {
+	display: inline;
+	width: 15px;
+	height: auto;
+	padding: 0 12px;
+	/*margin: 1px;*/
+}
+
+.camera {
+	display: inline-block;
+	float: right;
+	width: 20px;
+	height: auto;
+	padding: 0;
+	/*margin: 1px;*/
+}
+
+.exit {
+	display: block;
+	float: right;
+	width: 15px;
+	height: auto;
+	padding: 0;
+}
+
+.title {
+	color: $dark-blue;
+	font-family: $rubik-mono;
+	font-size: $twenty-one;
+	line-height: 21px;
+	margin: 0;
+	padding: 0;
+}
+
+.type {
+	font-family: $rubik-mono;
+	font-size: $fifteen;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+}
+
+.address-date {
+	font-family: $karla;
+	font-size: $twenty-one;
+	font-weight: $bold;
+	line-height: 150%;
+	margin: 0;
+	padding: 0;
+}
+
+.info {
+	font-family: $karla;
+	font-size: $eighteen;
+	font-weight: $reg;
+	line-height: 150%;
+	margin: 0;
+	padding: 0;
+}
+
+.header-count {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	top: 0;
+	/*border-bottom: 1px solid $dark-blue;*/
+}
+
+.total {
+	display: inline;
+	font-family: $rubik-mono;
+	font-size: $forty-eight;
+	margin: 0;
+	padding: 5px;
+	padding-left: 0px;
+}
+
+.total-type {
+	display: inline;
+	font-family: $rubik;
+	font-size: $eighteen;
+	font-weight: $black;
+	line-height: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.count {
+	/*position: fixed;*/
+	display: block;
+	float: left;
+	color: $dark-blue;
+	background-color: white;
+	border: 1px solid $dark-blue;
+	border-bottom: 2px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px;
+	margin-top: 50px;
+}
+
+.l-bricks {
+	padding-top: 50vh;
+	width: 100vw;
+	z-index: 0;
+	/*background-color: white;*/
+}
+
+#bricks {
+	z-index: 0;
+}
+
+.demo {
+	display: block;
+	float: left;
+	color: $yellow;
+	background-color: $blue;
+	border: 1px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px;
+}
+
+.issue {
+	display: block;
+	float: left;
+	color: $yellow;
+	background-color: $red;
+	border: 1px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px;
+}
+
+.l-issue {
+	display: block;
+	float: left;
+	width: calc(100% - 30px);
+	padding: 0;
+	margin: 0;
+}
+
+.permit {
+	display: block;
+	float: left;
+	color: $dark-blue;
+	background-color: $orange;
+	border: 1px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px;
+}
+
+.sale {
+	display: block;
+	float: left;
+	color: $dark-blue;
+	background-color: $yellow;
+	border: 1px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px;
+}
+
+#bricks div:nth-child(5) {
+	margin-left: calc(100vw / 8);
+}
+
+#bricks div:nth-child(7n+5) {
+	margin-left: calc(100vw / 8);
+}
+
+.offset {
+	margin-left: calc(100vw / 8);
+}
+

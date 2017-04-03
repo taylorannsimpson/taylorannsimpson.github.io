@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Building Detroit</title>
+<!-- links to CSS -->
+	<link rel="stylesheet" type="text/css" href="index.css">
+<!-- meta data -->
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+</head>
+<body>
+	<nav>
+		<div class="header">
+			<h1 class="title">BUILDING DETROIT: A CHANGING CITY</h1>
+		</div>
+		<div class="header-sort">
+			<div class="sort">
+				<img src="svg/plus.svg" class="icon">
+				<img src="svg/minus.svg" class="icon">
+			</div>
+			<div class="sort">
+				<p class="header-text">bricks</p>
+				<img src="svg/arrow.svg" class="icon">
+			</div>
+			<div class="sort">
+				<p class="header-text">years</p>
+				<img src="svg/arrow.svg" class="icon">
+			</div>
+			<div class="about" id="about">
+				<p class="header-text">?</p>
+			</div>
+		</div>
+	</nav>
+	<!-- counts -->
+	<div class="header-count">
+		<p id="demo-count"></p>
+		<p id="issue-count"></p>
+		<p id="permit-count"></p>
+		<p id="auction-count"></p>
+	</div>
+	<div class="pop-up">
+		<div class="info-pop" id="info-pop">
+			<img src="svg/exit.svg" class="exit" id="about-exit">
+			<p class="bold-text">About</p><br>
+			<p class="reg-text">Detroit is a changing city. In 2010 the Census Bureau’s population count was 713,777, down almost 25% from the 2000 count coming in at 951,307. In the past few years there has been word of Detroit becoming “the Next Berlin,” and on the Pure Michigan site, it reads “Detroit: America’s Great Comeback City,” with a nighttime view of the downtown area. But what does that mean? Mostly we hear about how millennials are fleeing to Detroit, where the housing is cheap—contributing to gentrification—and how the downtown area is seeing a resurgence. And the rest of the city? Detroit is 149.2 square miles, with the downtown area only taking up 1.39 square miles of that. The new QLine, set to launch in May 2017, will only service a little more than 3 miles in the downtown, midtown, and new center areas. The good news: near the end of 2016, 65,000 new streetlights were added, sprawling the city and making it okay for people—like restaurant goers and school kids—to go out in the dark.</p><br>
+			<p class="reg-text">Using public data updated weekly, this site aims to focus on the whole of Detroit’s property, highlighting concrete and individual sources of change. Rather than focusing on large, years-long projects, it focuses on site-specific changes created by the residents and government. Projects like demolitions mean new builds or room for public spaces like gardens, and auction sales show that people are invested in rebuilding what’s there. Submitted issues allow residents to alert the government of what needs to be fixed, and permits show what residents are fixing themselves. Here’s to building Detroit, one block at a time.</p><br>
+			<p class="reg-text italic center">Data provided by <a href="" class="underline">data.detroit.gov</a></p>
+			<p class="reg-text center">Taylor Simpson &copy 2017</a></p><br>
+			<p class="bold-text underline center" id="method-link">Design Methodology</p>
+		</div>
+		<div class="method" id="method">
+			<img src="svg/exit.svg" class="exit" id="method-exit">
+			<p class="bold-text">Why not a map?</p><br>
+			<p class="reg-text">The original design for this site was map-based, showing the Detroit neighborhoods filled in with colors indicating ratios of the numbers of structures in good, fair, poor, or demolition condition. Like the current design, it also included information on past demolitions, building permits, and auction sales. I was stuck on the idea of the map for a while, knowing that redevelopment is often linked to race. My hope was to show how the areas with more residents closer to white on the spectrum had properties in better condition and more work being done on the properties. This design lacked demographic census information, which didn’t make it user-friendly in terms of my goal. When I did look for census data and couldn’t find what I was looking for in the right format, I decided to change my approach.</p><br>
+			<p class="bold-text">Design</p><br>
+			<p class="reg-text">In rethinking the format, I came to the conclusion that the map was not the issue, but the amount of information I was showing up front. I decided to highlight each individual demolition, issue, permit, and sale, rather than turn them into confusing counts and ratios. I also opted to get rid of showing the structure conditions to make the focus clearer. Now each item is represented by a brick—a Midwest construction staple—allowing users to see the address and other pertinent info in order by date.</p><br>
+			<p class="reg-text">The colors came from sports teams, opting to use brighter colors for easy differentiation. Each brick is also labeled by type for accessibility, allowing those with color-blindness to still use the site. The fonts, from Google, were chosen as a linkage to hand-painted block letters, especially common on brick buildings.</p><br>
+			<p class="bold-text">Data</p><br>
+			<p class="reg-text">why demolitions, issues, permits, and sales</p><br>
+			<p class="bold-text">Development</p><br>
+			<p class="reg-text">working with the data</p><br>
+			<p class="bold-text">What could be improved?</p><br>
+			<p class="reg-text">Things I think would be useful if the site had them.</p>
+		</div>
+	</div>
+	<!-- bricks -->
+	<div class="l-bricks">
+		<div id="bricks">
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
