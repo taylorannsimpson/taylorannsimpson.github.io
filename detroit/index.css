@@ -182,8 +182,7 @@ a {
   margin: 0;
   padding: 0;
   width: 100vw;
-  top: 0;
-  /*border-bottom: 1px solid $dark-blue;*/ }
+  top: 0; }
 
 .total {
   display: inline;
@@ -217,32 +216,56 @@ a {
 
 .l-bricks {
   padding-top: 50vh;
-  width: 100vw;
+  width: calc(100vw - 16px);
   z-index: 0;
   /*background-color: white;*/ }
 
 #bricks {
   z-index: 0; }
 
-.demo {
+/*brick sizes*/
+.brick {
   display: block;
   float: left;
-  color: #F5DC0F;
-  background-color: #1663CF;
-  border: 1px solid #0D2A52;
   width: calc(100vw / 4 - 26px);
   height: 135px;
   padding: 10px; }
 
-.issue {
+.half-brick {
   display: block;
   float: left;
-  color: #F5DC0F;
-  background-color: #C70F2E;
-  border: 1px solid #0D2A52;
-  width: calc(100vw / 4 - 26px);
-  height: 135px;
+  width: calc(50vw / 4 - 24px);
+  height: 60px;
   padding: 10px; }
+
+.quarter-brick {
+  display: block;
+  float: left;
+  width: calc(25vw / 4 - 13px);
+  height: 25px;
+  padding: 5px; }
+
+.eighth-brick {
+  display: block;
+  float: left;
+  width: calc(25vw / 8 - 10.5px);
+  height: 12px;
+  padding: 4px; }
+
+.sixteenth-brick {
+  display: block;
+  float: left;
+  width: calc(25vw / 16 - 8.25px);
+  height: 5px;
+  padding: 2px 3px; }
+
+/*brick colors*/
+.demo {
+  color: #F5DC0F;
+  background-color: #1663CF;
+  border: 1px solid #0D2A52; }
+  .demo:hover {
+    background-color: #0D2A52; }
 
 .l-issue {
   display: block;
@@ -251,33 +274,60 @@ a {
   padding: 0;
   margin: 0; }
 
+.issue {
+  color: #F5DC0F;
+  background-color: #C70F2E;
+  border: 1px solid #0D2A52; }
+  .issue:hover {
+    background-color: #0D2A52; }
+
 .permit {
-  display: block;
-  float: left;
   color: #0D2A52;
   background-color: #F77136;
-  border: 1px solid #0D2A52;
-  width: calc(100vw / 4 - 26px);
-  height: 135px;
-  padding: 10px; }
+  border: 1px solid #0D2A52; }
+  .permit:hover {
+    background-color: white; }
 
 .sale {
-  display: block;
-  float: left;
   color: #0D2A52;
   background-color: #F5DC0F;
-  border: 1px solid #0D2A52;
-  width: calc(100vw / 4 - 26px);
-  height: 135px;
-  padding: 10px; }
+  border: 1px solid #0D2A52; }
+  .sale:hover {
+    background-color: white; }
 
-#bricks div:nth-child(5) {
+/*regular brick offset*/
+#bricks div.brick:nth-child(5) {
   margin-left: calc(100vw / 8); }
 
-#bricks div:nth-child(7n+5) {
+#bricks div.brick:nth-child(7n+5) {
   margin-left: calc(100vw / 8); }
 
-.offset {
-  margin-left: calc(100vw / 8); }
+/*half brick offset*/
+#bricks div.half-brick:nth-child(9) {
+  margin-left: calc(50vw / 8); }
+
+#bricks div.half-brick:nth-child(15n+9) {
+  margin-left: calc(50vw / 8); }
+
+/*quarter brick offset*/
+#bricks div.quarter-brick:nth-child(17) {
+  margin-left: calc(25vw / 8); }
+
+#bricks div.quarter-brick:nth-child(31n+17) {
+  margin-left: calc(25vw / 8); }
+
+/*eighth brick offset*/
+#bricks div.eighth-brick:nth-child(33) {
+  margin-left: calc(25vw / 16); }
+
+#bricks div.eighth-brick:nth-child(63n+33) {
+  margin-left: calc(25vw / 16); }
+
+/*sixteenth brick offset*/
+#bricks div.sixteenth-brick:nth-child(65) {
+  margin-left: calc(25vw / 32); }
+
+#bricks div.sixteenth-brick:nth-child(127n+65) {
+  margin-left: calc(25vw / 32); }
 
 /*# sourceMappingURL=index.css.map */

@@ -16,8 +16,8 @@
 		</div>
 		<div class="header-sort">
 			<div class="sort">
-				<img src="svg/plus.svg" class="icon">
-				<img src="svg/minus.svg" class="icon">
+				<img src="svg/plus.svg" class="icon" id="plus">
+				<img src="svg/minus.svg" class="icon" id="minus">
 			</div>
 			<div class="sort">
 				<p class="header-text">bricks</p>
@@ -64,11 +64,47 @@
 			<p class="reg-text">Things I think would be useful if the site had them.</p>
 		</div>
 	</div>
-	<!-- bricks -->
-	<div class="l-bricks">
-		<div id="bricks">
+	<script type="text/html" id="containingDiv">
+		<div class="l-bricks" id="bricks">
+			<% _.each(demo, function(demoBrick, key, list) { %>
+				<div class="brick demo">
+					<p class="type">DEMOLITION</p>
+					<p class="address-date"><%= demoBrick.address %></p>
+					<p class="info">cost: $<%= demoBrick.price %></p>
+					<p class="address-date"><%= demoBrick.demolition_date %></p>
+				</div>
+			<%});%>
+			<% _.each(issue, function(issueBrick, key, list) { %>
+				<div class="brick issue">
+					<div class="l-issue">
+						<p class="type">ISSUE</p>
+						<p class="address-date"><%= issueBrick.address %></p>
+						<p class="info"><%= issueBrick.issue_type %>: <%= issueBrick.issue_description %></p>
+						<p class="address-date"><%= issueBrick.ticket_created_date_time %></p>
+					</div>
+					<img src="svg/camera.svg" class="camera">
+				</div>
+			<%});%>
+			<% _.each(permit, function(permitBrick, key, list) { %>
+				<div class="brick permit">
+					<p class="type">PERMIT</p>
+					<p class="address-date"><%= permitBrick.site_address %></p>
+					<p class="info"><%= permitBrick.bld_type_use %>: <%= permitBrick.bld_permit_desc %></p>
+					<p class="address-date"><%= permitBrick.permit_issued %></p>
+				</div>
+			<%});%>
+			<% _.each(auction, function(auctionBrick, key, list) { %>
+				<div class="brick sale">
+					<p class="type">AUCTION SALE</p>
+					<p class="address-date"><%= auctionBrick.address %></p>
+					<p class="info">cost: $<%= auctionBrick.final_sale_amount %></p>
+					<p class="address-date"><%= auctionBrick.closing_date %></p>
+				</div>
+			<%});%>
 		</div>
-	</div>
+	</script>
+	<div id="target"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="index.js"></script>
 </body>

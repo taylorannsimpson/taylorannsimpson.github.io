@@ -235,7 +235,6 @@ a {
 	padding: 0;
 	width: 100vw;
 	top: 0;
-	/*border-bottom: 1px solid $dark-blue;*/
 }
 
 .total {
@@ -273,7 +272,7 @@ a {
 
 .l-bricks {
 	padding-top: 50vh;
-	width: 100vw;
+	width: calc(100vw - 16px);
 	z-index: 0;
 	/*background-color: white;*/
 }
@@ -282,26 +281,58 @@ a {
 	z-index: 0;
 }
 
-.demo {
+/*brick sizes*/
+
+.brick {
 	display: block;
 	float: left;
-	color: $yellow;
-	background-color: $blue;
-	border: 1px solid $dark-blue;
 	width: calc(100vw / 4 - 26px);
 	height: 135px;
 	padding: 10px;
 }
 
-.issue {
+.half-brick {
 	display: block;
 	float: left;
-	color: $yellow;
-	background-color: $red;
-	border: 1px solid $dark-blue;
-	width: calc(100vw / 4 - 26px);
-	height: 135px;
+	width: calc(50vw / 4 - 24px);
+	height: 60px;
 	padding: 10px;
+}
+
+.quarter-brick {
+	display: block;
+	float: left;
+	width: calc(25vw / 4 - 13px);
+	height: 25px;
+	padding: 5px;
+}
+
+.eighth-brick {
+	display: block;
+	float: left;
+	width: calc(25vw / 8 - 10.5px);
+	height: 12px;
+	padding: 4px;
+}
+
+.sixteenth-brick {
+	display: block;
+	float: left;
+	width: calc(25vw / 16 - 8.25px);
+	height: 5px;
+	padding: 2px 3px;
+}
+
+/*brick colors*/
+
+.demo {
+	color: $yellow;
+	background-color: $blue;
+	border: 1px solid $dark-blue;
+
+	&:hover {
+		background-color: $dark-blue;
+	}
 }
 
 .l-issue {
@@ -312,37 +343,82 @@ a {
 	margin: 0;
 }
 
+.issue {
+	color: $yellow;
+	background-color: $red;
+	border: 1px solid $dark-blue;
+
+	&:hover {
+		background-color: $dark-blue;
+	}
+}
+
 .permit {
-	display: block;
-	float: left;
 	color: $dark-blue;
 	background-color: $orange;
 	border: 1px solid $dark-blue;
-	width: calc(100vw / 4 - 26px);
-	height: 135px;
-	padding: 10px;
+
+	&:hover {
+		background-color: white;
+	}
 }
 
 .sale {
-	display: block;
-	float: left;
 	color: $dark-blue;
 	background-color: $yellow;
 	border: 1px solid $dark-blue;
-	width: calc(100vw / 4 - 26px);
-	height: 135px;
-	padding: 10px;
+
+	&:hover {
+		background-color: white;
+	}
 }
 
-#bricks div:nth-child(5) {
+/*regular brick offset*/
+
+#bricks div.brick:nth-child(5) {
 	margin-left: calc(100vw / 8);
 }
 
-#bricks div:nth-child(7n+5) {
+#bricks div.brick:nth-child(7n+5) {
 	margin-left: calc(100vw / 8);
 }
 
-.offset {
-	margin-left: calc(100vw / 8);
+/*half brick offset*/
+
+#bricks div.half-brick:nth-child(9) {
+	margin-left: calc(50vw / 8);
 }
 
+#bricks div.half-brick:nth-child(15n+9) {
+	margin-left: calc(50vw / 8);
+}
+
+/*quarter brick offset*/
+
+#bricks div.quarter-brick:nth-child(17) {
+	margin-left: calc(25vw / 8);
+}
+
+#bricks div.quarter-brick:nth-child(31n+17) {
+	margin-left: calc(25vw / 8);
+}
+
+/*eighth brick offset*/
+
+#bricks div.eighth-brick:nth-child(33) {
+	margin-left: calc(25vw / 16);
+}
+
+#bricks div.eighth-brick:nth-child(63n+33) {
+	margin-left: calc(25vw / 16);
+}
+
+/*sixteenth brick offset*/
+
+#bricks div.sixteenth-brick:nth-child(65) {
+	margin-left: calc(25vw / 32);
+}
+
+#bricks div.sixteenth-brick:nth-child(127n+65) {
+	margin-left: calc(25vw / 32);
+}

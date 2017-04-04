@@ -94,60 +94,6 @@ $('#auction-count').append('<div class="count">' + '<p class="total">' + auction
 $('#issue-count').append('<div class="count">' + '<p class="total">' + issue.length + '</p>' + '<p class="total-type">' + "SUBMITTED ISSUES" + '</p>' + '</div>');
 
 
-// bricks
-
-for (var i = 0; i < demo.length; i++) {
-
-    var full_date = demo[i].demolition_date;
-    var date = full_date.substring(0,10);
-    var sort_date = [date];
-    
-    $('#bricks').append('<div class="demo">' + '<p class="type">' + "DEMOLITION" + '</p>' + '<p class="address-date">' + demo[i].address + '</p>' + '<p class="info">' + "cost: $" + demo[i].price + '</p>' + '<p class="address-date">' + date + '</p>' + '</div>');
-
-   function compareNumbers(a, b) {
-        return a - b;
-   };
-
-   console.log(sort_date.sort(compareNumbers));
-   // sort_date.sort(compareNumbers);
-
-};
-
-
-
-for (var i = 0; i < issue.length; i++) {
-    
-    var full_date = issue[i].ticket_created_date_time;
-    var date = full_date.substring(0,10);
-
-    $('#bricks').append('<div class="issue">' + '<div class="l-issue">' + '<p class="type">' + "ISSUE" + '</p>' + '<p class="address-date">' + issue[i].address + '</p>' + '<p class="info">' + issue[i].issue_type + '</p>' + '<p class="info">' + issue[i].issue_description + '</p>' + '<p class="address-date">' + date + '</p>' + '</div>' + '<img src="svg/camera.svg" class="camera">' + '</div>');
-
-    // $('#image').append('<img src="camera.svg" class="camera">')
-
-    // if (issue[i].issue_description === undefined) {
-    //   issue[i}.issue_description.hide();
-    // };
-
-};
-
-for (var i = 0; i < permit.length; i++) {
-    
-    // var long_date = permit[i].permit_issued;
-    // var date = long_date.substring(0,10);
-
-    $('#bricks').append('<div class="permit">' + '<p class="type">' + "PERMIT" + '</p>' + '<p class="address-date">' + permit[i].site_address + '</p>' + '<p class="info">' + permit[i].bld_type_use + ": " + permit[i].bld_permit_desc + '</p>' + '<p class="address-date">' + permit[i].permit_issued + '</p>' + '</div>');
-
-};
-
-for (var i = 0; i < auction.length; i++) {
-
-    var full_date = auction[i].closing_date;
-    var date = full_date.substring(0,10);
-    
-    $('#bricks').append('<div class="sale">' + '<p class="type">' + "SALE" + '</p>' + '<p class="address-date">' + auction[i].address + '</p>' + '<p class="info">' + "cost: $" + auction[i].final_sale_amount + '</p>' + '<p class="address-date">' + date + '</p>' + '</div>');
-
-};
-
 // toggles about section
 
 $('#info-pop').hide();
@@ -158,20 +104,6 @@ $('#about').click(function(e) {
   e.preventDefault();
 
   $('#info-pop').toggle(0);
-
-  // $('html, body').animate({
-  //   scrollTop: $('#info-pop').height()
-  // }, 400);
-
-// $('html, body').animate({
-//     $scrollTop: ('#info-pop')
-// });
-
-// $('html, body').animate({
-//     scrollTop: $('#info-pop').height()
-//   }, 400);
-
-  // $('html, body').scrollTop(0).animate(400);
 
 });
 
@@ -204,3 +136,87 @@ $('#about-exit').click(function(e) {
 
 });
 
+// underscore brick template
+
+var template = containingDiv.innerHTML;
+target.innerHTML = _.template(template,{demo:demo, issue:issue, permit:permit, auction:auction});
+
+// zoom out
+
+$('#minus').click(function(e) {
+      
+  e.preventDefault();
+
+  if ($('#bricks div').hasClass('brick')) {
+
+    $('#bricks div').removeClass('brick');
+    $('#bricks div').addClass('half-brick');
+    $('.info').hide();
+    $('.address-date').hide();
+
+  }
+
+  else if ($('#bricks div').hasClass('half-brick')) {
+
+    $('#bricks div').removeClass('half-brick');
+    $('#bricks div').addClass('quarter-brick');
+    $('.type').hide();
+    $('.camera').hide();
+
+  }
+
+  else if ($('#bricks div').hasClass('quarter-brick')) {
+    
+    $('#bricks div').removeClass('quarter-brick');
+    $('#bricks div').addClass('eighth-brick');
+
+  }
+
+  else if ($('#bricks div').hasClass('eighth-brick')) {
+
+    $('#bricks div').removeClass('eighth-brick');
+    $('#bricks div').addClass('sixteenth-brick');
+
+  }
+
+});
+
+// zoom in
+
+$('#plus').click(function(e) {
+      
+  e.preventDefault();
+
+  if ($('#bricks div').hasClass('sixteenth-brick')) {
+    
+    $('#bricks div').removeClass('sixteenth-brick');
+    $('#bricks div').addClass('eighth-brick');
+
+  }
+
+  else if ($('#bricks div').hasClass('eighth-brick')) {
+
+    $('#bricks div').removeClass('eighth-brick');
+    $('#bricks div').addClass('quarter-brick');   
+
+  } 
+
+  else if ($('#bricks div').hasClass('quarter-brick')) {
+
+    $('#bricks div').removeClass('quarter-brick');
+    $('#bricks div').addClass('half-brick');
+    $('.type').show();
+    $('.camera').show();
+
+  }
+
+  else if ($('#bricks div').hasClass('half-brick')) {
+
+    $('#bricks div').removeClass('half-brick');
+    $('#bricks div').addClass('brick');
+    $('.info').show();
+    $('.address-date').show();
+
+  }
+    
+});
