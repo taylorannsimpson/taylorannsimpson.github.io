@@ -82,6 +82,10 @@ var auction = (function () {
     return auction
 })();
 
+// timestamps
+
+// var demoDate = demoBrick.demolition_date.substring(0,10);
+
 
 // header counts
 
@@ -136,10 +140,32 @@ $('#about-exit').click(function(e) {
 
 });
 
+// sort bricks by date
+
+// _.each(demo, function(demoBrick, key, list) { 
+//     var demoDate = demoBrick.demolition_date.substring(0,10);
+//     var sortDate = _.sortBy(demoBrick, "demoDate");
+// });
+
+// var demoDate = demoBrick.demolition_date.substring(0,10);
+
+// var sortArray = [demolition_date]
+
+var sortDemo = _.sortBy(demo, 'demolition_date');
+
+var sortIssue = _.sortBy(issue, 'ticket_created_date_time');
+
+// var sortArray = [sortDemo, sortIssue];
+
+var demoArray = $.merge([], sortDemo);
+var issueArray = $.merge([], sortIssue);
+
+var sortArray = $.merge(sortDemo, sortIssue);
+
 // underscore brick template
 
 var template = containingDiv.innerHTML;
-target.innerHTML = _.template(template,{demo:demo, issue:issue, permit:permit, auction:auction});
+target.innerHTML = _.template(template,{sortDemo:sortDemo, demoArray:demoArray, issueArray:issueArray, sortIssue:sortIssue, permit:permit, auction:auction});
 
 // zoom out
 

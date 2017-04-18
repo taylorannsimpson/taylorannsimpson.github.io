@@ -66,39 +66,61 @@
 	</div>
 	<script type="text/html" id="containingDiv">
 		<div class="l-bricks" id="bricks">
-			<% _.each(demo, function(demoBrick, key, list) { %>
+			<% _.each(demoArray, function(demoBrick, key, list) { 
+				var demoDate = demoBrick.demolition_date.substring(0,10);
+				// var sortDate = _.sortBy(demoBrick, "demoDate");
+				%>
 				<div class="brick demo">
 					<p class="type">DEMOLITION</p>
 					<p class="address-date"><%= demoBrick.address %></p>
 					<p class="info">cost: $<%= demoBrick.price %></p>
-					<p class="address-date"><%= demoBrick.demolition_date %></p>
+					<p class="address-date"><%= demoDate %></p>
 				</div>
 			<%});%>
-			<% _.each(issue, function(issueBrick, key, list) { %>
+			<% _.each(issueArray, function(issueBrick, key, list) { 
+				if (issueBrick.ticket_created_date_time === undefined) {
+
+					} else {
+						 var issueDate = issueBrick.ticket_created_date_time.substring(0,10);
+					}
+				%>
 				<div class="brick issue">
 					<div class="l-issue">
 						<p class="type">ISSUE</p>
 						<p class="address-date"><%= issueBrick.address %></p>
 						<p class="info"><%= issueBrick.issue_type %>: <%= issueBrick.issue_description %></p>
-						<p class="address-date"><%= issueBrick.ticket_created_date_time %></p>
+						<p class="address-date"><%= issueDate %></p>
 					</div>
 					<img src="svg/camera.svg" class="camera">
 				</div>
 			<%});%>
-			<% _.each(permit, function(permitBrick, key, list) { %>
+			<% _.each(permit, function(permitBrick, key, list) { 
+
+					if (permitBrick.permit_issued === undefined){
+
+					} else {
+						 var permitDate = permitBrick.permit_issued.substring(0,10);
+					}
+				%>
 				<div class="brick permit">
 					<p class="type">PERMIT</p>
 					<p class="address-date"><%= permitBrick.site_address %></p>
 					<p class="info"><%= permitBrick.bld_type_use %>: <%= permitBrick.bld_permit_desc %></p>
-					<p class="address-date"><%= permitBrick.permit_issued %></p>
+					<p class="address-date"><%= permitDate %></p>
 				</div>
 			<%});%>
-			<% _.each(auction, function(auctionBrick, key, list) { %>
+			<% _.each(auction, function(auctionBrick, key, list) { 
+				if (auctionBrick.closing_date === undefined) {
+
+					} else {
+						 var auctionDate = auctionBrick.closing_date.substring(0,10);
+					}
+				%>
 				<div class="brick sale">
 					<p class="type">AUCTION SALE</p>
 					<p class="address-date"><%= auctionBrick.address %></p>
 					<p class="info">cost: $<%= auctionBrick.final_sale_amount %></p>
-					<p class="address-date"><%= auctionBrick.closing_date %></p>
+					<p class="address-date"><%= auctionDate %></p>
 				</div>
 			<%});%>
 		</div>
