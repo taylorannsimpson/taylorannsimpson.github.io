@@ -224,6 +224,7 @@ var sSetUpDropdown = function() {
 
 };
 
+
 // Label setup //
 //-------------//
 
@@ -268,7 +269,8 @@ if ($('#d-year').attr('checked')) {
   dDropLabel = ['year'];
   dDropdown = dDropYear;
 
-  groupDisplayed = _.groupBy(displayed, 'year');
+  sortGroup = _.sortBy(displayed, 'year'); 
+  groupDisplayed = _.groupBy(sortGroup, 'year');
   // console.log(groupDisplayed);
 
   _.each(groupDisplayed, function(displayed, key) {
@@ -286,7 +288,7 @@ if ($('#d-year').attr('checked')) {
   dSetUpDropdown();
   textChanges();
 
-}
+};
 
 
 $('#d-year').click(function() {
@@ -296,7 +298,8 @@ $('#d-year').click(function() {
   dDropLabel = ['year'];
   dDropdown = dDropYear;
 
-  groupDisplayed = _.groupBy(displayed, 'year');
+  sortGroup = _.sortBy(displayed, 'year'); 
+  groupDisplayed = _.groupBy(sortGroup, 'year');
 
   _.each(groupDisplayed, function(displayed, key) {
 
@@ -324,9 +327,11 @@ $('#d-alphabetical').click(function() {
   dDropLabel = ['alphabet'];
   dDropdown = dDropAlphabet;
 
-  groupDisplayed = _.groupBy(displayed, letter);
+  sortGroup = _.sortBy(displayed, 'object'); 
+  groupDisplayed = _.groupBy(sortGroup, 'object');
+  // groupDisplayed = _.groupBy(displayed, letter);
 
-    var letter = 'object'.charAt(1);
+  //   var letter = 'object'.charAt(1);
 
   _.each(groupDisplayed, function(displayed, key) {
 
@@ -352,7 +357,8 @@ $('#d-location').click(function() {
   dDropLabel = ['location'];
   dDropdown = dDropLocation;
     
-  groupDisplayed = _.groupBy(displayed, 'location');
+  sortGroup = _.sortBy(displayed, 'location'); 
+  groupDisplayed = _.groupBy(sortGroup, 'location');
 
   _.each(groupDisplayed, function(displayed, key) {
 
@@ -369,6 +375,7 @@ $('#d-location').click(function() {
   dSetUpLabel();
   dSetUpDropdown();
   textChanges();
+  // smoothScroll();
 
 });
 
@@ -379,7 +386,8 @@ $('#d-how').click(function() {
   dDropLabel = ['how'];
   dDropdown = dDropHow;
 
-  groupDisplayed = _.groupBy(displayed, 'how1');
+  sortGroup = _.sortBy(displayed, 'how1'); 
+  groupDisplayed = _.groupBy(sortGroup, 'how1');
 
   _.each(groupDisplayed, function(displayed, key) {
 
@@ -405,7 +413,8 @@ $('#d-classification').click(function() {
   dDropLabel = ['classification'];
   dDropdown = dDropUse;
   
-  groupDisplayed = _.groupBy(displayed, 'use');
+  sortGroup = _.sortBy(displayed, 'use'); 
+  groupDisplayed = _.groupBy(sortGroup, 'use');
 
   _.each(groupDisplayed, function(displayed, key) {
 
@@ -440,81 +449,152 @@ var setUpStored = function(sortStored) {
 // checkbox toggles for stored objects //
 //-------------------------------------//
 
-// if ($('#s-year').attr('checked')) {
+if ($('#s-year').attr('checked')) {
   
-//   dDropLabel = ['year'];
-//   dDropdown = dDropYear;
-//   sortStored = _.sortBy(stored, 'year');
-
-//   sSetUpLabel();
-//   sSetUpDropdown();
-//   setUpStored(sortStored);
-//   textChanges();
-
-// }
-
-$('#s-year').click(function() {
+  stored_target.innerHTML = '';
 
   dDropLabel = ['year'];
   dDropdown = dDropYear;
-  sortStored = _.sortBy(stored, 'year');
+  
+  sortGroup = _.sortBy(stored, 'year'); 
+  groupStored = _.groupBy(sortGroup, 'year');
+
+  _.each(groupStored, function(stored, key) {
+
+    var sortStored = _.sortBy(stored, 'year');
+      //console.log(key)
+
+      titleLabel = stored[0].year;
+
+      setUpStored(sortStored);
+
+  });
 
   sSetUpLabel();
   sSetUpDropdown();
-  setUpStored(sortStored);
+  textChanges();
+
+};
+
+$('#s-year').click(function() {
+
+  stored_target.innerHTML = '';
+
+  dDropLabel = ['year'];
+  dDropdown = dDropYear;
+  
+  sortGroup = _.sortBy(stored, 'year'); 
+  groupStored = _.groupBy(sortGroup, 'year');
+
+  _.each(groupStored, function(stored, key) {
+
+    var sortStored = _.sortBy(stored, 'year');
+      //console.log(key)
+
+      titleLabel = stored[0].year;
+
+      setUpStored(sortStored);
+
+  });
+
+  sSetUpLabel();
+  sSetUpDropdown();
   textChanges();
   
 });
 
 $('#s-alphabetical').click(function() {
 
+  stored_target.innerHTML = '';
+
   dDropLabel = ['alphabet'];
   dDropdown = dDropAlphabet;
-  sortStored = _.sortBy(stored, 'object');
+  
+  sortGroup = _.sortBy(stored, 'obect'); 
+  groupStored = _.groupBy(sortGroup, 'object');
+
+  _.each(groupStored, function(stored, key) {
+
+    var sortStored = _.sortBy(stored, 'object');
+
+      titleLabel = stored[0].object.substring(0,1);
+
+      setUpStored(sortStored);
+
+  });
    
   sSetUpLabel();
   sSetUpDropdown(); 
-  setUpStored(sortStored);
   textChanges();
 
 });
 
 $('#s-location').click(function() {
 
+  stored_target.innerHTML = '';
+
   dDropLabel = ['location'];
   dDropdown = dDropLocation;
-  sortStored = _.sortBy(stored, 'location');
   
+  sortGroup = _.sortBy(stored, 'location'); 
+  groupStored = _.groupBy(sortGroup, 'location');
+
+  _.each(groupStored, function(stored, key) {
+
+    var sortStored = _.sortBy(stored, 'location');
+
+      titleLabel = stored[0].location;
+
+      setUpStored(sortStored);
+
+  });
+ 
   sSetUpLabel();
   sSetUpDropdown();  
-  setUpStored(sortStored);
   textChanges();
 
 });
 
 $('#s-how').click(function() {
 
+  stored_target.innerHTML = '';
+
   dDropLabel = ['how'];
   dDropdown = dDropHow;
-  sortStored = _.sortBy(stored, 'how1');
+  
+  sortGroup = _.sortBy(stored, 'how1'); 
+  groupStored = _.groupBy(sortGroup, 'how1');
+
+  _.each(groupStored, function(stored, key) {
+
+    var sortStored = _.sortBy(stored, 'how1');
+      //console.log(key)
+
+      titleLabel = stored[0].how1;
+
+      setUpStored(sortStored);
+
+  });
   
   sSetUpLabel();
   sSetUpDropdown(); 
-  setUpStored(sortStored);
   textChanges();
 
 });
 
 $('#s-classification').click(function() {
 
+  stored_target.innerHTML = '';
+
   dDropLabel = ['classification'];
   dDropdown = dDropUse;
 
-  groupStored = _.groupBy(stored, 'use');
+  sortGroup = _.sortBy(stored, 'use'); 
+  groupStored = _.groupBy(sortGroup, 'use');
 
   _.each(groupStored, function(stored, key) {
 
-    var sortStored = _.sortBy(stored, 'object')
+    var sortStored = _.sortBy(stored, 'use');
       //console.log(key)
 
       titleLabel = stored[0].use;
@@ -528,3 +608,5 @@ $('#s-classification').click(function() {
   textChanges();
 
 });
+
+

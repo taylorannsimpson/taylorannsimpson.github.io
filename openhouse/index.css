@@ -94,7 +94,7 @@ h1 {
 .about-link {
   color: #ffffff; }
   .about-link:hover {
-    background-color: #000000; }
+    background-color: #434349; }
 
 .l-bedroom {
   padding: 100px 100px 50px 50px; }
@@ -217,6 +217,9 @@ h1 {
   width: calc(100vw - 151px);
   padding: 5px 10px 5px 35px;
   transition: .2s; }
+
+.l-dropdown a {
+  text-decoration: none; }
 
 .dropdown {
   width: calc(100vw - 116px);
@@ -362,12 +365,33 @@ h1 {
   min-height: calc(100vh - 50px);
   /*text-align: center;*/ }
 
+.l-info-quote {
+  padding: 30px;
+  margin: 0;
+  text-align: center; }
+
+.l-info-middle {
+  width: 50%;
+  padding: 30px;
+  padding-left: 25%;
+  margin: 0;
+  text-align: center; }
+
+.info-quote {
+  color: #2B2B33;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 3.25em;
+  line-height: 140%;
+  text-align: center;
+  margin: 10px 0; }
+
 #display-circle {
   /*margin: 15px;*/
   margin: 15px auto;
   background-color: #434349;
-  width: 187px;
-  height: 187px;
+  width: 185px;
+  height: 185px;
   border-radius: 50%;
   transition: .2s; }
   #display-circle:hover {
@@ -377,8 +401,8 @@ h1 {
   /*margin: 15px;*/
   margin: 15px auto;
   background-color: #2B2B33;
-  width: 241px;
-  height: 241px;
+  width: 265px;
+  height: 265px;
   border-radius: 50%;
   transition: .2s; }
   #stored-circle:hover {
@@ -556,6 +580,9 @@ input[type="radio"] {
 .bg-light-gray {
   background-color: #f1f1f2; }
 
+.bg-med-gray {
+  background-color: #e6e7e8; }
+
 .bg-dark-gray {
   background-color: #d0d2d3; }
 
@@ -567,6 +594,9 @@ input[type="radio"] {
 
 .bg-l-dark-blue {
   background-color: #35353D; }
+
+.bg-ll-dark-blue {
+  background-color: #434349; }
 
 /* text colors */
 /*-------------*/
