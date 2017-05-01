@@ -53,7 +53,6 @@ nav {
 
 .header {
 	display: inline-block;
-	/*float: left;*/
 	padding: 14px;
 	margin: 0;
 	width: calc(500% / 8 - 32px);
@@ -600,4 +599,116 @@ input[type="checkbox"] {
 
 #bricks div.sixteenth-brick:nth-child(127n+65) {
 	margin-left: calc(25vw / 32);
+}
+
+/* phone media query */
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+
+  	.title {
+  		font-size: $eighteen;
+  	}
+
+  	.header {
+  		width: 100%;
+  		border-width: 2px 1px 1px 1px;
+	}
+
+	.header-sort {
+  		width: 100%;
+  		border-width: 1px 1px 2px 1px;;
+	}
+
+	.header-text {
+		font-size: $twenty-one;
+	
+	}
+
+	#year-form {
+		width: 50%;
+		margin-top: 100px;
+	}
+
+	#brick-form {
+		width: 50%;
+		margin-top: 100px;
+	}
+
+	.count {
+		margin-top: 100px;
+		height: 100px;
+	}
+
+	.total {
+		font-size: $twenty-one;
+	}
+
+	.total-type {
+		font-size: $eighteen;
+		line-height: 150%;
+	}
+
+	.info-pop {
+		width: calc(100% - 40px);
+		margin: 0;
+		font-size: $twenty-one;
+		line-height: 150%;
+
+	}
+
+	.method {
+		width: calc(100% - 40px);
+		margin: 0;
+		font-size: $twenty-one;
+		line-height: 150%;
+	}
+
+	/*.brick {
+		font-size: $twenty-one;
+		line-height: 150%;
+	}*/
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  	
+  	.header {
+  		width: 100%;
+  		border-width: 2px 1px 1px 1px;
+	}
+
+	.header-sort {
+  		width: 100%;
+  		border-width: 1px 1px 2px 1px;
+	}
+
+	.count {
+		margin-top: 100px;
+		height: 100px;
+	}
+
+	.total {
+		font-size: $twenty-one;
+	}
+
+	.total-type {
+		font-size: $eighteen;
+		line-height: 150%;
+	}
+
+	.info-pop {
+		width: 80%;
+		margin: auto;
+		font-size: $twenty-one;
+		line-height: 150%;
+
+	}
+
+	.method {
+		width: 80%;
+		margin: auto;
+		font-size: $twenty-one;
+		line-height: 150%;
+	}
+
 }
