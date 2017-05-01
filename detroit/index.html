@@ -106,8 +106,9 @@
 		<div class="l-bricks" id="bricks">
 			<% _.each(demoArray, function(demoBrick, key, list) { 
 				var demoDate = demoBrick.demolition_date.substring(0,10);
+				var year = demoBrick.demolition_date.substring(0,4);
 				%>
-				<div class="brick demo" id="demoJump">
+				<div class="brick demo <%= year %>" id="demoJump">
 					<p class="type">DEMOLITION</p>
 					<p class="address-date"><%= demoBrick.address %></p>
 					<p class="info"><span class="info-bold">cost:</span> $<%= demoBrick.price %></p>
@@ -121,9 +122,10 @@
 					if (issueBrick.ticket_created_date_time === undefined) {
 					} else {
 						 var issueDate = issueBrick.ticket_created_date_time.substring(0,10);
+						 var year = issueBrick.ticket_created_date_time.substring(0,4);
 					} 
 				%>
-				<div class="brick issue" id="issueJump">
+				<div class="brick issue <%= year %>" id="issueJump">
 					<img src="<%= issueBrick.image %>" class="image" id="picture">
 					<div id="issue-pic" class="l-issue">	
 						<p class="type">ISSUE</p>
@@ -139,6 +141,7 @@
 					if (permitBrick.permit_issued === undefined){
 					} else {
 						 var permitDate = permitBrick.permit_issued.substring(0,10);
+						 var year = permitBrick.permit_issued.substring(0,4);
 					}
 
 					if (permitBrick.permit_expires === undefined){
@@ -146,7 +149,7 @@
 						 var permitExpires = permitBrick.permit_expires.substring(0,10);
 					}
 				%>
-				<div class="brick permit" id="permitJump">
+				<div class="brick permit <%= year %>" id="permitJump">
 					<p class="type">PERMIT</p>
 					<p class="address-date"><%= permitBrick.site_address %></p>
 					<p class="more-info"><%= permitBrick.bld_type_use %>: <%= permitBrick.bld_permit_desc %></p>
@@ -158,12 +161,12 @@
 			
 			<% _.each(auctionArray, function(auctionBrick, key, list) { 
 				if (auctionBrick.closing_date === undefined) {
-
 					} else {
-						 var auctionDate = auctionBrick.closing_date.substring(0,10);
+						var auctionDate = auctionBrick.closing_date.substring(0,10);
+						var year = auctionBrick.closing_date.substring(0,4);
 					}
 				%>
-				<div class="brick sale" id="auctionJump">
+				<div class="brick sale <%= year %>" id="auctionJump">
 					<p class="type">AUCTION SALE</p>
 					<p class="address-date"><%= auctionBrick.address %></p>
 					<p class="more-info"><span class="info-bold">puchaser type:</span> <%= auctionBrick.purchaser_type %></p>

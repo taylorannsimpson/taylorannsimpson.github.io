@@ -82,16 +82,6 @@ var auction = (function () {
     return auction
 })();
 
-// header counts*/
-
-$('#demo-count').append('<a href="#demoJump">' + '<div class="count demo-count">' + '<p class="total">' + demo.length + '</p>' + '<p class="total-type">' + "DEMOLITONS" + '</p>' + '</div>' + '</a>');
-
-$('#permit-count').append('<a href="#permitJump">' + '<div class="count permit-count">' + '<p class="total">' + permit.length + '</p>' + '<p class="total-type">' + "BUILDING PERMITS" + '</p>' + '</div>' + '</a>');
-
-$('#auction-count').append('<a href="#auctionJump">' + '<div class="count auction-count">' + '<p class="total">' + auction.length + '</p>' + '<p class="total-type">' + "AUCTION SALES" + '</p>' + '</div>' + '</a>');
-
-$('#issue-count').append('<a href="#issueJump">' + '<div class="count issue-count">' + '<p class="total">' + issue.length + '</p>' + '<p class="total-type">' + "SUBMITTED ISSUES" + '</p>' + '</div>' + '</a>');
-
 
 /* toggles about section */
 
@@ -194,62 +184,35 @@ $('#sortYears').click(function() {
 // options for year sorting //
 //---------------------------//
 
-var year
 
 $('#14Option').click(function() {
-
-  groupDemo = _.groupBy(demoArray, 'demolition_date');
-
-  _.each(groupDemo, function(demoBrick, key) {
-
-    console.log(key.substring(0,4));
-
-    if (key.substring(0,4) === "2014") {
-
-        $('.demo').toggle();
-    }   
-  });
-
+  $('.2014').toggle();
 });
 
-
 $('#15Option').click(function() {
-  
+  $('.2015').toggle();
+
 });
 
 $('#16Option').click(function() {
-  
+  $('.2016').toggle();
 });
 
 $('#17Option').click(function() {
-
-  groupDemo = _.groupBy(demoArray, 'demolition_date');
-
-  _.each(groupDemo, function(demoBrick, key) {
-
-    console.log(key.substring(0,4));
-
-    if (key.substring(0,4) === 2017) {
-
-        $('.demo').toggle();
-    }   
-  });
-
-  groupIssue = _.groupBy(issueArray, 'ticket_created_date_time');
-
-  _.each(groupIssue, function(issueBrick, key) {
-
-    var year = key.substring(0,4);
-
-    console.log(year);
-
-    if (year === 2017) {
-
-        $(".issue").toggle();
-    }   
-  });
-  
+  $('.2017').toggle();
 });
+
+
+// header counts*/
+
+$('#demo-count').append('<a href="#demoJump">' + '<div class="count demo-count">' + '<p class="total">' + demoArray.length + '</p>' + '<p class="total-type">' + "DEMOLITONS" + '</p>' + '</div>' + '</a>');
+
+$('#permit-count').append('<a href="#permitJump">' + '<div class="count permit-count">' + '<p class="total">' + permitArray.length + '</p>' + '<p class="total-type">' + "BUILDING PERMITS" + '</p>' + '</div>' + '</a>');
+
+$('#auction-count').append('<a href="#auctionJump">' + '<div class="count auction-count">' + '<p class="total">' + auctionArray.length + '</p>' + '<p class="total-type">' + "AUCTION SALES" + '</p>' + '</div>' + '</a>');
+
+$('#issue-count').append('<a href="#issueJump">' + '<div class="count issue-count">' + '<p class="total">' + issueArray.length + '</p>' + '<p class="total-type">' + "SUBMITTED ISSUES" + '</p>' + '</div>' + '</a>');
+
 
 
 /* underscore brick template */
