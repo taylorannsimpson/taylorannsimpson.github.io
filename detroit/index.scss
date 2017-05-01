@@ -20,6 +20,7 @@ $light-gray: #E6E6E6;
 $forty-eight: 3em;
 $twenty-one: 1.3125em;
 $eighteen: 1.125em;
+$seventeen: 1.0635em;
 $fifteen: 0.9375em;
 
 body {
@@ -35,6 +36,10 @@ p {
 	margin: 0;
 }
 
+:focus {
+	outline: none;
+}
+
 nav {
 	position: fixed;
 	background-color: $light-gray;
@@ -42,7 +47,7 @@ nav {
 	margin: 0;
 	padding: 0;
 	width: calc(100vw - 16px);
-	z-index: 600;
+	z-index: 999;
 }
 
 
@@ -229,6 +234,24 @@ a {
 	padding: 0;
 }
 
+.more-info {
+	font-family: $karla;
+	font-size: $eighteen;
+	font-weight: $reg;
+	line-height: 150%;
+	margin: 0;
+	padding: 0;
+}
+
+.info-bold {
+	font-family: $karla;
+	font-size: $seventeen;
+	font-weight: $bold;
+	line-height: 150%;
+	margin: 0;
+	padding: 0;
+}
+
 .header-count {
 	position: fixed;
 	margin: 0;
@@ -238,7 +261,6 @@ a {
 }
 
 .total {
-	display: inline;
 	font-family: $rubik-mono;
 	font-size: $forty-eight;
 	margin: 0;
@@ -257,18 +279,37 @@ a {
 }
 
 .count {
-	/*position: fixed;*/
 	display: block;
 	float: left;
 	color: $dark-blue;
 	background-color: white;
 	border: 1px solid $dark-blue;
 	border-bottom: 2px solid $dark-blue;
-	width: calc(100vw / 4 - 26px);
+	width: calc(100vw / 4 - 46px);
 	height: 135px;
-	padding: 10px;
+	padding: 10px 20px;
 	margin-top: 50px;
 }
+
+.demo-count:hover {
+	color: $yellow;
+	background-color: $blue;
+}
+
+.issue-count:hover {
+	color: $yellow;
+	background-color: $red;
+}
+
+.permit-count:hover {
+	background-color: $orange;
+}
+
+.auction-count:hover {
+	background-color: $yellow;
+}
+
+
 
 .l-bricks {
 	padding-top: 50vh;
@@ -281,7 +322,24 @@ a {
 	z-index: 0;
 }
 
+.image {
+	display: inline-block;
+	float: right;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	max-width: 50%;
+}
+
 /*brick sizes*/
+
+.large-brick {
+	display: block;
+	float: left;
+	width: calc(100vw / 2 - 30px);
+	height: 250px;
+	padding: 10px;
+}
 
 .brick {
 	display: block;
@@ -330,8 +388,21 @@ a {
 	background-color: $blue;
 	border: 1px solid $dark-blue;
 
-	&:hover {
+	/*&:hover {
 		background-color: $dark-blue;
+	}*/
+}
+
+.l-issue-pic {
+	display: block;
+	float: left;
+	width: calc(50% - 10px);
+	padding: 0;
+	margin: 0;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar { 
+    	width: 0px; 
 	}
 }
 
@@ -348,9 +419,9 @@ a {
 	background-color: $red;
 	border: 1px solid $dark-blue;
 
-	&:hover {
+	/*&:hover {
 		background-color: $dark-blue;
-	}
+	}*/
 }
 
 .permit {
@@ -358,9 +429,9 @@ a {
 	background-color: $orange;
 	border: 1px solid $dark-blue;
 
-	&:hover {
+	/*&:hover {
 		background-color: white;
-	}
+	}*/
 }
 
 .sale {
@@ -368,9 +439,117 @@ a {
 	background-color: $yellow;
 	border: 1px solid $dark-blue;
 
-	&:hover {
+	/*&:hover {
 		background-color: white;
+	}*/
+}
+
+/* checkbox label styling */
+
+/*.form-title {
+	font-family: $karla;
+	font-weight: $reg;
+	font-size: $eighteen;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+}*/
+
+#demoOption {
+	width: 100%;
+}
+
+#year-form {
+	position: fixed;
+	right: 0;
+	color: $dark-blue;
+	background-color: $light-gray;
+	border: 2px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px 20px;
+	margin-top: 51px;
+	z-index: 600;
+}
+
+#brick-form {
+	position: fixed;
+	right: 0;
+	color: $dark-blue;
+	background-color: $light-gray;
+	border: 2px solid $dark-blue;
+	width: calc(100vw / 4 - 26px);
+	height: 135px;
+	padding: 10px 20px;
+	margin-top: 51px;
+	z-index: 600;
+}
+
+.form-option {
+	font-family: $karla;
+	font-weight: $bold;
+	font-size: $seventeen;
+	margin-left: 25px;
+}
+
+/* checkboxes */
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.l-checkbox {
+	margin-bottom: 15px;
+
+	label {
+		position: relative;
 	}
+
+	span::before,
+	span::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		padding: 0;
+	}
+
+	span.checkbox::before {
+		width: 15px;
+		height: 15px;
+		background-color: white;
+		left: -25px;
+	}
+
+	span.checkbox:hover::before {
+  		background-color: $dark-blue;
+	}
+	
+	span.checkbox::after {	
+		left: -25px;
+		width: 15px;
+		height: 15px;
+		color: transparent;
+		transition: color .2s;
+	}
+
+	input[type="checkbox"]:checked + label span.checkbox::after {
+	  	background-color: $dark-blue;
+	  	height: 15px;
+	  	width: 15px;
+	}
+
+}
+
+/* large brick offeset */
+
+#bricks div.large-brick:nth-child(3) {
+	margin-left: calc(100vw / 4 - 4px);
+}
+
+#bricks div.large-brick:nth-child(3n+3) {
+	margin-left: calc(100vw / 4 - 4px);
 }
 
 /*regular brick offset*/

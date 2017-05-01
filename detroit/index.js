@@ -1,4 +1,4 @@
-// demoliton bricks
+/* demoliton bricks*/
 
 var demo = (function () {
     var demo = null;
@@ -19,7 +19,7 @@ var demo = (function () {
     return demo
 })();
 
-// issue bricks
+/* issue bricks*/
 
 var issue = (function () {
     var issue = null;
@@ -40,7 +40,7 @@ var issue = (function () {
     return issue
 })();
 
-// permit bricks
+/* permit bricks*/
 
 var permit = (function () {
     var permit = null;
@@ -61,7 +61,7 @@ var permit = (function () {
     return permit
 })();
 
-// auction bricks
+/* auction bricks*/
 
 var auction = (function () {
     var auction = null;
@@ -82,23 +82,18 @@ var auction = (function () {
     return auction
 })();
 
-// timestamps
+// header counts*/
 
-// var demoDate = demoBrick.demolition_date.substring(0,10);
+$('#demo-count').append('<a href="#demoJump">' + '<div class="count demo-count">' + '<p class="total">' + demo.length + '</p>' + '<p class="total-type">' + "DEMOLITONS" + '</p>' + '</div>' + '</a>');
 
+$('#permit-count').append('<a href="#permitJump">' + '<div class="count permit-count">' + '<p class="total">' + permit.length + '</p>' + '<p class="total-type">' + "BUILDING PERMITS" + '</p>' + '</div>' + '</a>');
 
-// header counts
+$('#auction-count').append('<a href="#auctionJump">' + '<div class="count auction-count">' + '<p class="total">' + auction.length + '</p>' + '<p class="total-type">' + "AUCTION SALES" + '</p>' + '</div>' + '</a>');
 
-$('#demo-count').append('<div class="count">' + '<p class="total">' + demo.length + '</p>' + '<p class="total-type">' + "DEMOLITONS" + '</p>' + '</div>');
-
-$('#permit-count').append('<div class="count">' + '<p class="total">' + permit.length + '</p>' + '<p class="total-type">' + "BUILDING PERMITS" + '</p>' + '</div>');
-
-$('#auction-count').append('<div class="count">' + '<p class="total">' + auction.length + '</p>' + '<p class="total-type">' + "AUCTION SALES" + '</p>' + '</div>');
-
-$('#issue-count').append('<div class="count">' + '<p class="total">' + issue.length + '</p>' + '<p class="total-type">' + "SUBMITTED ISSUES" + '</p>' + '</div>');
+$('#issue-count').append('<a href="#issueJump">' + '<div class="count issue-count">' + '<p class="total">' + issue.length + '</p>' + '<p class="total-type">' + "SUBMITTED ISSUES" + '</p>' + '</div>' + '</a>');
 
 
-// toggles about section
+/* toggles about section */
 
 $('#info-pop').hide();
 $('#method').hide();
@@ -129,51 +124,161 @@ $('#method-exit').click(function(e) {
 
 });
 
-// closes about section
+/* closes about section*/
 
-$('#about-exit').click(function(e) {
-  
-  e.preventDefault();
+$('#about-exit').click(function() {
 
   $('#info-pop').toggle(0);
   $('#method').hide()
 
 });
 
-// sort bricks by date
+/* closes brick sorting options */
+// -----------------------------//
 
-// _.each(demo, function(demoBrick, key, list) { 
-//     var demoDate = demoBrick.demolition_date.substring(0,10);
-//     var sortDate = _.sortBy(demoBrick, "demoDate");
-// });
+$('#brick-form').hide();
 
-// var demoDate = demoBrick.demolition_date.substring(0,10);
+$('#sortBricks').click(function() {
 
-// var sortArray = [demolition_date]
+  $('#brick-form').slideToggle(200);
+
+});
+
+/* sort bricks by date */
+/*---------------------*/
 
 var sortDemo = _.sortBy(demo, 'demolition_date');
-
 var sortIssue = _.sortBy(issue, 'ticket_created_date_time');
+var sortPermit = _.sortBy(permit, 'permit_issued');
+var sortSale = _.sortBy(auction, 'closing_date');
 
-// var sortArray = [sortDemo, sortIssue];
+var demoArray = ($.merge([], sortDemo)).reverse();
+var issueArray = ($.merge([], sortIssue)).reverse();
+var permitArray = ($.merge([], sortPermit)).reverse();
+var auctionArray = ($.merge([], sortSale)).reverse();
 
-var demoArray = $.merge([], sortDemo);
-var issueArray = $.merge([], sortIssue);
+// options for brick sorting //
+//---------------------------//
 
-var sortArray = $.merge(sortDemo, sortIssue);
+$('#demoOption').click(function() {
+  $('.demo').toggle();
+  $('#demo-count').toggle();
+});
 
-// underscore brick template
+$('#issueOption').click(function() {
+  $('.issue').toggle();
+  $('#issue-count').toggle();
+});
+
+$('#permitOption').click(function() {
+  $('.permit').toggle();
+  $('#permit-count').toggle();
+});
+
+$('#auctionOption').click(function() {
+  $('.sale').toggle();
+  $('#auction-count').toggle();
+});
+
+/* closes year sorting options */
+// -----------------------------//
+
+$('#year-form').hide();
+
+$('#sortYears').click(function() {
+
+  $('#year-form').slideToggle(200);
+
+});
+
+// options for year sorting //
+//---------------------------//
+
+var year
+
+$('#14Option').click(function() {
+
+  groupDemo = _.groupBy(demoArray, 'demolition_date');
+
+  _.each(groupDemo, function(demoBrick, key) {
+
+    console.log(key.substring(0,4));
+
+    if (key.substring(0,4) === "2014") {
+
+        $('.demo').toggle();
+    }   
+  });
+
+});
+
+
+$('#15Option').click(function() {
+  
+});
+
+$('#16Option').click(function() {
+  
+});
+
+$('#17Option').click(function() {
+
+  groupDemo = _.groupBy(demoArray, 'demolition_date');
+
+  _.each(groupDemo, function(demoBrick, key) {
+
+    console.log(key.substring(0,4));
+
+    if (key.substring(0,4) === 2017) {
+
+        $('.demo').toggle();
+    }   
+  });
+
+  groupIssue = _.groupBy(issueArray, 'ticket_created_date_time');
+
+  _.each(groupIssue, function(issueBrick, key) {
+
+    var year = key.substring(0,4);
+
+    console.log(year);
+
+    if (year === 2017) {
+
+        $(".issue").toggle();
+    }   
+  });
+  
+});
+
+
+/* underscore brick template */
+/*---------------------------*/
 
 var template = containingDiv.innerHTML;
-target.innerHTML = _.template(template,{sortDemo:sortDemo, demoArray:demoArray, issueArray:issueArray, sortIssue:sortIssue, permit:permit, auction:auction});
+target.innerHTML = _.template(template,{demoArray:demoArray, issueArray:issueArray, permitArray:permitArray, auctionArray:auctionArray});
 
-// zoom out
+/* zoom out */
+/*----------*/
 
-$('#minus').click(function(e) {
-      
-  e.preventDefault();
+$('.more-info').hide();
+$('.image').hide();
 
-  if ($('#bricks div').hasClass('brick')) {
+$('#minus').click(function() {
+
+  if ($('#bricks div').hasClass('large-brick')) {
+
+    $('#bricks div').removeClass('large-brick');
+    $('#bricks div').addClass('brick');
+    $('.more-info').hide();
+    $('.image').hide();
+
+    $('.l-issue-pic').addClass('l-issue');
+    $('.l-issue-pic').removeClass('l-issue-pic');
+
+  }
+
+  else if ($('#bricks div').hasClass('brick')) {
 
     $('#bricks div').removeClass('brick');
     $('#bricks div').addClass('half-brick');
@@ -207,11 +312,9 @@ $('#minus').click(function(e) {
 
 });
 
-// zoom in
+/* zoom in */
 
-$('#plus').click(function(e) {
-      
-  e.preventDefault();
+$('#plus').click(function() {
 
   if ($('#bricks div').hasClass('sixteenth-brick')) {
     
@@ -244,5 +347,54 @@ $('#plus').click(function(e) {
     $('.address-date').show();
 
   }
+
+  else if ($('#bricks div').hasClass('brick')) {
+
+    $('#bricks div').removeClass('brick');
+    $('#bricks div').addClass('large-brick');
+    $('.more-info').show();
+    $('.image').show();
+
+    $('.l-issue').addClass('l-issue-pic');
+    $('.l-issue').removeClass('l-issue');
+
+  }
     
 });
+
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top - 220
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });

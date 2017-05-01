@@ -19,11 +19,11 @@
 				<img src="svg/plus.svg" class="icon" id="plus">
 				<img src="svg/minus.svg" class="icon" id="minus">
 			</div>
-			<div class="sort">
+			<div class="sort" id="sortBricks">
 				<p class="header-text">bricks</p>
 				<img src="svg/arrow.svg" class="icon">
 			</div>
-			<div class="sort">
+			<div class="sort" id="sortYears">
 				<p class="header-text">years</p>
 				<img src="svg/arrow.svg" class="icon">
 			</div>
@@ -32,6 +32,46 @@
 			</div>
 		</div>
 	</nav>
+	<div id="brick-form">
+		<form>
+			<div class="l-checkbox">
+		  		<input type="checkbox" id="demoOption" checked>
+		  		<label for="demoOption" class="form-option"><span class="checkbox">demolitions</span></label><br>
+		  	</div>
+		  	<div class="l-checkbox">
+		  		<input type="checkbox" id="issueOption" checked>
+		  		<label for="issueOption" class="form-option"><span class="checkbox">submitted issues</span></label><br>
+		  	</div>
+		  	<div class="l-checkbox">
+		  		<input type="checkbox" id="permitOption" checked>
+		  		<label for="permitOption" class="form-option"><span class="checkbox">building permits</span></label><br>
+		  	</div>
+		  	<div class="l-checkbox">
+		  		<input type="checkbox" id="auctionOption" checked>
+		  		<label for="auctionOption" class="form-option"><span class="checkbox">auction sales</span></label><br>
+		  	</div>
+		</form>
+	</div>
+	<div id="year-form">
+		<form>
+			<div class="l-checkbox">
+		  		<input type="checkbox" id="14Option" checked>
+		  		<label for="14Option" class="form-option"><span class="checkbox">2014</span></label><br>
+		  	</div>
+		  	<div class="l-checkbox">
+		  		<input type="checkbox" id="15Option" checked>
+		  		<label for="15Option" class="form-option"><span class="checkbox">2015</span></label><br>
+		  	</div>
+		  	<div class="l-checkbox">
+		  		<input type="checkbox" id="16Option" checked>
+		  		<label for="16Option" class="form-option"><span class="checkbox">2016</span></label><br>
+		  	</div>
+		  	<div class="l-checkbox">
+		  		<input type="checkbox" id="17Option" checked>
+		  		<label for="17Option" class="form-option"><span class="checkbox">2017</span></label><br>
+		  	</div>
+		</form>
+	</div>
 	<!-- counts -->
 	<div class="header-count">
 		<p id="demo-count"></p>
@@ -68,61 +108,72 @@
 		<div class="l-bricks" id="bricks">
 			<% _.each(demoArray, function(demoBrick, key, list) { 
 				var demoDate = demoBrick.demolition_date.substring(0,10);
-				// var sortDate = _.sortBy(demoBrick, "demoDate");
 				%>
-				<div class="brick demo">
+				<div class="brick demo" id="demoJump">
 					<p class="type">DEMOLITION</p>
 					<p class="address-date"><%= demoBrick.address %></p>
-					<p class="info">cost: $<%= demoBrick.price %></p>
+					<p class="info"><span class="info-bold">cost:</span> $<%= demoBrick.price %></p>
+					<p class="more-info"><span class="info-bold">contractor:</span> <%= demoBrick.contractor_name %></p>
+					<p class="more-info"><span class="info-bold">neighborhood:</span> <%= demoBrick.neighborhood %></p>	
 					<p class="address-date"><%= demoDate %></p>
 				</div>
 			<%});%>
+			
 			<% _.each(issueArray, function(issueBrick, key, list) { 
-				if (issueBrick.ticket_created_date_time === undefined) {
-
+					if (issueBrick.ticket_created_date_time === undefined) {
 					} else {
 						 var issueDate = issueBrick.ticket_created_date_time.substring(0,10);
-					}
+					} 
 				%>
-				<div class="brick issue">
-					<div class="l-issue">
+				<div class="brick issue" id="issueJump">
+					<img src="<%= issueBrick.image %>" class="image" id="picture">
+					<div id="issue-pic" class="l-issue">	
 						<p class="type">ISSUE</p>
 						<p class="address-date"><%= issueBrick.address %></p>
-						<p class="info"><%= issueBrick.issue_type %>: <%= issueBrick.issue_description %></p>
+						<p class="more-info"><%= issueBrick.issue_type %>: <%= issueBrick.issue_description %></p>
+						<p class="more-info"><span class="info-bold">ticket status:</span> <%= issueBrick.ticket_status %></p>
 						<p class="address-date"><%= issueDate %></p>
-					</div>
-					<img src="svg/camera.svg" class="camera">
+					</div>			
 				</div>
 			<%});%>
-			<% _.each(permit, function(permitBrick, key, list) { 
-
+			
+			<% _.each(permitArray, function(permitBrick, key, list) { 
 					if (permitBrick.permit_issued === undefined){
-
 					} else {
 						 var permitDate = permitBrick.permit_issued.substring(0,10);
 					}
+
+					if (permitBrick.permit_expires === undefined){
+					} else {
+						 var permitExpires = permitBrick.permit_expires.substring(0,10);
+					}
 				%>
-				<div class="brick permit">
+				<div class="brick permit" id="permitJump">
 					<p class="type">PERMIT</p>
 					<p class="address-date"><%= permitBrick.site_address %></p>
-					<p class="info"><%= permitBrick.bld_type_use %>: <%= permitBrick.bld_permit_desc %></p>
+					<p class="more-info"><%= permitBrick.bld_type_use %>: <%= permitBrick.bld_permit_desc %></p>
+					<p class="more-info"><span class="info-bold">estimated cost:</span> $<%= permitBrick.estimated_cost %></p>
+					<p class="more-info"><span class="info-bold">expires:</span> <%= permitExpires %></p>	
 					<p class="address-date"><%= permitDate %></p>
 				</div>
 			<%});%>
-			<% _.each(auction, function(auctionBrick, key, list) { 
+			
+			<% _.each(auctionArray, function(auctionBrick, key, list) { 
 				if (auctionBrick.closing_date === undefined) {
 
 					} else {
 						 var auctionDate = auctionBrick.closing_date.substring(0,10);
 					}
 				%>
-				<div class="brick sale">
+				<div class="brick sale" id="auctionJump">
 					<p class="type">AUCTION SALE</p>
 					<p class="address-date"><%= auctionBrick.address %></p>
-					<p class="info">cost: $<%= auctionBrick.final_sale_amount %></p>
+					<p class="more-info"><span class="info-bold">puchaser type:</span> <%= auctionBrick.purchaser_type %></p>
+					<p class="info"><span class="info-bold">cost:</span> $<%= auctionBrick.final_sale_amount %></p>
 					<p class="address-date"><%= auctionDate %></p>
 				</div>
 			<%});%>
+			
 		</div>
 	</script>
 	<div id="target"></div>

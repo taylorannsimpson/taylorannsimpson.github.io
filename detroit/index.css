@@ -12,6 +12,9 @@ p {
   padding: 0;
   margin: 0; }
 
+:focus {
+  outline: none; }
+
 nav {
   position: fixed;
   background-color: #E6E6E6;
@@ -19,7 +22,7 @@ nav {
   margin: 0;
   padding: 0;
   width: calc(100vw - 16px);
-  z-index: 600; }
+  z-index: 999; }
 
 .header {
   display: inline-block;
@@ -177,6 +180,22 @@ a {
   margin: 0;
   padding: 0; }
 
+.more-info {
+  font-family: "Karla", sans-serif;
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  padding: 0; }
+
+.info-bold {
+  font-family: "Karla", sans-serif;
+  font-size: 1.0635em;
+  font-weight: 700;
+  line-height: 150%;
+  margin: 0;
+  padding: 0; }
+
 .header-count {
   position: fixed;
   margin: 0;
@@ -185,7 +204,6 @@ a {
   top: 0; }
 
 .total {
-  display: inline;
   font-family: "Rubik Mono One", sans-serif;
   font-size: 3em;
   margin: 0;
@@ -202,17 +220,30 @@ a {
   padding: 0; }
 
 .count {
-  /*position: fixed;*/
   display: block;
   float: left;
   color: #0D2A52;
   background-color: white;
   border: 1px solid #0D2A52;
   border-bottom: 2px solid #0D2A52;
-  width: calc(100vw / 4 - 26px);
+  width: calc(100vw / 4 - 46px);
   height: 135px;
-  padding: 10px;
+  padding: 10px 20px;
   margin-top: 50px; }
+
+.demo-count:hover {
+  color: #F5DC0F;
+  background-color: #1663CF; }
+
+.issue-count:hover {
+  color: #F5DC0F;
+  background-color: #C70F2E; }
+
+.permit-count:hover {
+  background-color: #F77136; }
+
+.auction-count:hover {
+  background-color: #F5DC0F; }
 
 .l-bricks {
   padding-top: 50vh;
@@ -223,7 +254,22 @@ a {
 #bricks {
   z-index: 0; }
 
+.image {
+  display: inline-block;
+  float: right;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  max-width: 50%; }
+
 /*brick sizes*/
+.large-brick {
+  display: block;
+  float: left;
+  width: calc(100vw / 2 - 30px);
+  height: 250px;
+  padding: 10px; }
+
 .brick {
   display: block;
   float: left;
@@ -263,9 +309,20 @@ a {
 .demo {
   color: #F5DC0F;
   background-color: #1663CF;
-  border: 1px solid #0D2A52; }
-  .demo:hover {
-    background-color: #0D2A52; }
+  border: 1px solid #0D2A52;
+  /*&:hover {
+  	background-color: $dark-blue;
+  }*/ }
+
+.l-issue-pic {
+  display: block;
+  float: left;
+  width: calc(50% - 10px);
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll; }
+  .l-issue-pic::-webkit-scrollbar {
+    width: 0px; }
 
 .l-issue {
   display: block;
@@ -277,23 +334,109 @@ a {
 .issue {
   color: #F5DC0F;
   background-color: #C70F2E;
-  border: 1px solid #0D2A52; }
-  .issue:hover {
-    background-color: #0D2A52; }
+  border: 1px solid #0D2A52;
+  /*&:hover {
+  	background-color: $dark-blue;
+  }*/ }
 
 .permit {
   color: #0D2A52;
   background-color: #F77136;
-  border: 1px solid #0D2A52; }
-  .permit:hover {
-    background-color: white; }
+  border: 1px solid #0D2A52;
+  /*&:hover {
+  	background-color: white;
+  }*/ }
 
 .sale {
   color: #0D2A52;
   background-color: #F5DC0F;
-  border: 1px solid #0D2A52; }
-  .sale:hover {
-    background-color: white; }
+  border: 1px solid #0D2A52;
+  /*&:hover {
+  	background-color: white;
+  }*/ }
+
+/* checkbox label styling */
+/*.form-title {
+	font-family: $karla;
+	font-weight: $reg;
+	font-size: $eighteen;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+}*/
+#demoOption {
+  width: 100%; }
+
+#year-form {
+  position: fixed;
+  right: 0;
+  color: #0D2A52;
+  background-color: #E6E6E6;
+  border: 2px solid #0D2A52;
+  width: calc(100vw / 4 - 26px);
+  height: 135px;
+  padding: 10px 20px;
+  margin-top: 51px;
+  z-index: 600; }
+
+#brick-form {
+  position: fixed;
+  right: 0;
+  color: #0D2A52;
+  background-color: #E6E6E6;
+  border: 2px solid #0D2A52;
+  width: calc(100vw / 4 - 26px);
+  height: 135px;
+  padding: 10px 20px;
+  margin-top: 51px;
+  z-index: 600; }
+
+.form-option {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 1.0635em;
+  margin-left: 25px; }
+
+/* checkboxes */
+input[type="checkbox"] {
+  display: none; }
+
+.l-checkbox {
+  margin-bottom: 15px; }
+  .l-checkbox label {
+    position: relative; }
+  .l-checkbox span::before,
+  .l-checkbox span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0; }
+  .l-checkbox span.checkbox::before {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    left: -25px; }
+  .l-checkbox span.checkbox:hover::before {
+    background-color: #0D2A52; }
+  .l-checkbox span.checkbox::after {
+    left: -25px;
+    width: 15px;
+    height: 15px;
+    color: transparent;
+    transition: color .2s; }
+  .l-checkbox input[type="checkbox"]:checked + label span.checkbox::after {
+    background-color: #0D2A52;
+    height: 15px;
+    width: 15px; }
+
+/* large brick offeset */
+#bricks div.large-brick:nth-child(3) {
+  margin-left: calc(100vw / 4 - 4px); }
+
+#bricks div.large-brick:nth-child(3n+3) {
+  margin-left: calc(100vw / 4 - 4px); }
 
 /*regular brick offset*/
 #bricks div.brick:nth-child(5) {
